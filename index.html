@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nationalist Reform PAC | Strategic Operations</title>
+    <title>Nationalist Reform | Strategic Operations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
@@ -55,7 +55,7 @@
             justify-content: center;
         }
 
-        /* PAC styling: Sharp edges, high contrast */
+        /* Styling: Sharp edges, high contrast */
         button, input, textarea { border-radius: 0 !important; }
         .card { border-radius: 0 !important; border: 1px solid #E2E8F0; }
 
@@ -109,7 +109,7 @@
             <div class="hero-gradient text-white p-8 md:p-12 border-b-8 border-red-700">
                 <div class="grid grid-cols-1 xl:grid-cols-5 gap-12 items-center">
                     <div class="xl:col-span-2 space-y-6">
-                        <h2 class="text-5xl md:text-6xl font-black leading-none italic">The War Room <span class="text-red-600">Briefing</span></h2>
+                        <h2 class="text-5xl md:text-6xl font-black leading-none italic">Strategic <span class="text-red-600">Briefing</span></h2>
                         <p class="text-lg text-slate-300 font-light uppercase tracking-wide">Moving America’s Assets from Public Liability to Private Authority.</p>
                         
                         <div class="bg-slate-800/50 p-6 border border-slate-700 w-full">
@@ -124,11 +124,6 @@
                                     <div class="w-full bg-slate-700 h-2"><div class="bg-blue-600 h-full" style="width: 45%"></div></div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <button onclick="scrollToContact()" class="bg-red-700 hover:bg-red-800 px-8 py-4 text-sm font-bold uppercase transition-all flex-1">Check Status</button>
-                            <button onclick="scrollToContact()" class="border border-white hover:bg-white hover:text-slate-900 px-8 py-4 text-sm font-bold uppercase transition-all flex-1">The Charter</button>
                         </div>
                     </div>
 
@@ -148,7 +143,7 @@
                 <div class="md:col-span-2">
                     <h3 class="text-2xl font-bold mb-4 border-l-4 border-red-700 pl-4 uppercase">Strategic Initiative Overview</h3>
                     <p class="text-slate-600 leading-relaxed mb-4">
-                        The Nationalist Reform PAC is not just a political movement; it is a structural intervention. We operate at the intersection of <strong>Constitutional Law</strong> and <strong>Private Equity</strong> to decouple individual wealth from state-managed liability. 
+                        Nationalist Reform is not just a movement; it is a structural intervention. We operate at the intersection of <strong>Constitutional Law</strong> and <strong>Private Equity</strong> to decouple individual wealth from state-managed liability. 
                     </p>
                     <p class="text-slate-600 leading-relaxed">
                         By deploying the <strong>98-Series Trust Protocol</strong>, we enable patriots to operate in a private capacity, shielded from the administrative state’s overreach while maintaining full equitable control of their estates.
@@ -239,30 +234,34 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="vaultGrid">
-                <div onclick="scrollToContact()" class="bg-slate-900 text-white p-6 hover:bg-red-900 transition-all cursor-pointer group">
+                <!-- Box 1 -->
+                <div class="bg-slate-900 text-white p-6 border border-slate-800">
                     <div class="text-3xl mb-4 text-red-600">📂</div>
                     <h4 class="font-bold text-sm uppercase mb-2">98-Series Indenture</h4>
-                    <p class="text-[10px] text-slate-400 uppercase leading-tight mb-4">The core constitutional contract for private estate management.</p>
-                    <div class="text-[9px] font-black group-hover:underline">ACCESS FILE →</div>
+                    <p class="text-[10px] text-slate-400 uppercase leading-tight">The core constitutional contract for private estate management. Proprietary documentation available only to active operations.</p>
                 </div>
-                <div onclick="scrollToContact()" class="bg-white border p-6 hover:border-red-700 transition-all cursor-pointer group">
+                <!-- Box 2 -->
+                <div class="bg-white border p-6">
                     <div class="text-3xl mb-4">⚖️</div>
-                    <h4 class="font-bold text-sm uppercase mb-2">UCC-1 Filings</h4>
-                    <p class="text-[10px] text-slate-500 uppercase leading-tight mb-4">Properly notifying the public record of your superior interest.</p>
-                    <div class="text-[9px] font-black text-red-700 group-hover:underline">ACCESS FILE →</div>
+                    <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">UCC-1 Filings</h4>
+                    <p class="text-[10px] text-slate-500 uppercase leading-tight">Strategic methods for notifying the public record of superior interest and securing first-lien position.</p>
                 </div>
-                <div onclick="scrollToContact()" class="bg-white border p-6 hover:border-red-700 transition-all cursor-pointer group">
+                <!-- Box 3 -->
+                <div class="bg-white border p-6">
                     <div class="text-3xl mb-4">📜</div>
-                    <h4 class="font-bold text-sm uppercase mb-2">Status Affidavit</h4>
-                    <p class="text-[10px] text-slate-500 uppercase leading-tight mb-4">The formal declaration of life and standing for the record.</p>
-                    <div class="text-[9px] font-black text-red-700 group-hover:underline">ACCESS FILE →</div>
+                    <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">Status Affidavit</h4>
+                    <p class="text-[10px] text-slate-500 uppercase leading-tight">Formal protocols for the declaration of life and standing within the private record for jurisdictional immunity.</p>
                 </div>
-                <div onclick="scrollToContact()" class="bg-slate-900 text-white p-6 hover:bg-red-900 transition-all cursor-pointer group">
+                <!-- Box 4 -->
+                <div class="bg-slate-900 text-white p-6 border border-slate-800">
                     <div class="text-3xl mb-4 text-red-600">⚡</div>
                     <h4 class="font-bold text-sm uppercase mb-2">Operational Manual</h4>
-                    <p class="text-[10px] text-slate-400 uppercase leading-tight mb-4">Step-by-step instructions for Trust administration.</p>
-                    <div class="text-[9px] font-black group-hover:underline">ACCESS FILE →</div>
+                    <p class="text-[10px] text-slate-400 uppercase leading-tight">Exhaustive step-by-step instructions for Trust administration and asset control under private authority.</p>
                 </div>
+            </div>
+            
+            <div class="mt-8 text-center bg-red-700/10 p-4 border border-red-700/20">
+                <p class="text-xs font-black uppercase tracking-widest text-red-700">Note: Digital assets are offline for security. Enquire below for physical copies.</p>
             </div>
         </section>
 
@@ -283,7 +282,7 @@
                         <input type="email" name="email" placeholder="SECURE EMAIL" required class="w-full bg-slate-800 border border-slate-700 p-4 text-xs font-mono uppercase focus:outline-none focus:border-red-700 text-white">
                     </div>
                     <textarea name="message" placeholder="DETAILED STRATEGIC ENQUIRY OR QUESTIONS" rows="4" required class="w-full bg-slate-800 border border-slate-700 p-4 text-xs font-mono uppercase focus:outline-none focus:border-red-700 text-white"></textarea>
-                    <button type="submit" class="w-full bg-red-700 hover:bg-red-800 py-4 font-black uppercase tracking-widest transition-all">Transmit Intelligence</button>
+                    <button type="submit" class="w-full bg-red-700 hover:bg-red-800 py-4 font-black uppercase tracking-widest transition-all">Transmit</button>
                 </form>
             </div>
         </section>
@@ -292,11 +291,11 @@
         <section class="mt-16 pt-8 pb-12 border-t border-slate-200">
             <div class="max-w-4xl mx-auto text-center space-y-6">
                 <p class="text-sm font-black text-slate-900 uppercase tracking-widest">
-                    ©️ 2025 State Nationalist Reform. All rights reserved.
+                    ©️ 2026 Nationalist Reform. All rights reserved.
                 </p>
                 <div class="bg-slate-100 p-6 border border-slate-200 text-left">
                     <p class="text-[11px] leading-relaxed text-slate-500 uppercase font-medium">
-                        <span class="text-red-700 font-black">Notice:</span> State Nationalist Reform is not a legal service provider. The information and content on this platform are for educational purposes only and do not constitute legal advice. By accessing our resources, you acknowledge that we are not liable for any decisions or actions taken based on the information provided.
+                        <span class="text-red-700 font-black">Notice:</span> Nationalist Reform is not a legal service provider. The information and content on this platform are for educational purposes only and do not constitute legal advice. By accessing our resources, you acknowledge that we are not liable for any decisions or actions taken based on the information provided.
                     </p>
                 </div>
             </div>
@@ -306,7 +305,7 @@
 
     <!-- Global Footer -->
     <footer class="bg-slate-900 text-white text-[10px] p-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center font-bold uppercase tracking-widest gap-4 shrink-0">
-        <div>Proprietary Information of SNR PAC • No public funds used</div>
+        <div>Proprietary Information of Nationalist Reform • No public funds used</div>
         <div class="text-center md:text-right">
             Powered by <a href="https://ladmedia.co" target="_blank" class="text-red-500 hover:text-red-400 transition-colors underline decoration-2 underline-offset-4">LAD MEDIA</a>
         </div>
