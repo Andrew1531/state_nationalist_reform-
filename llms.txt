@@ -1,1 +1,42 @@
+# National Reform | Strategic Operations - Technical Manifest
 
+A high-performance, single-page web application (SPA) focused on asset protection and jurisdictional standing. The site features a "paramilitary-corporate" aesthetic with heavy data visualization and embedded video intelligence.
+
+## Tech Stack
+- **Framework:** Vanilla HTML5/JavaScript
+- **Styling:** Tailwind CSS (via CDN)
+- **Visualization:** - Chart.js (Bar charts for asset distribution)
+    - Plotly.js (Sankey diagrams for jurisdictional flow)
+- **Video:** Rumble Embed Integration
+- **Forms:** FormSubmit integration (Serverless)
+- **Analytics:** Google Tag Manager (G-C2153TK33Z)
+
+## Design System
+- **Colors:** - Primary: `--pac-red: #B91C1C` (Impact/Action)
+    - Secondary: `--pac-navy: #0F172A` (Authority/Structure)
+    - Base: `--pac-bone: #F8FAFC` (Clean/Industrial)
+- **Typography:** - Headers: 'Oswald' (Uppercase, Bold, -0.02em tracking)
+    - Body: 'Inter'
+- **UI Patterns:** Sharp edges (0px border-radius), high-contrast borders, pulse animations for live status indicators, and heavy use of uppercase tracking.
+
+## Navigation & Views
+The application uses a custom `MapsTo(viewId)` JS function to toggle visibility between four primary sections:
+1. **Mission (`#mission`):** Hero section with Rumble video embed and progress indicators.
+2. **Funding (`#funding`):** Contains the Asset Insulation bar chart.
+3. **Standing (`#standing`):** Features the Jurisdictional Shield Sankey diagram showing asset flow from Public to Private capacity.
+4. **Vault (`#vault`):** Information grid for "Top Secret" proprietary documents.
+
+## Core JavaScript Logic
+- `MapsTo(viewId)`: Manages section visibility and updates navigation button active states.
+- `initCharts()`: Initializes horizontal bar charts using Chart.js to compare Public vs. Private assets.
+- `renderStandingFlow()`: Generates a Plotly Sankey diagram representing the "Drain" from state jurisdiction to private equity.
+- `scrollToContact()`: Smooth scroll utility for the inquiry form.
+
+## Tactical Data Structures
+- **Public Assets:** Viewed as "Vessels of the State" / Statutory Jurisdiction.
+- **Private Assets:** 98-Series Protocol / Non-Statutory / Equitable Title.
+
+## Inquiry System
+- **Endpoint:** `https://formsubmit.co/tom@statenationalistreform.info`
+- **Method:** POST
+- **Fields:** Name (or Fiction), Secure Email, Strategic Enquiry.
