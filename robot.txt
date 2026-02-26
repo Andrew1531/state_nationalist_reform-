@@ -1,1 +1,24 @@
+#    _   _   ____   
+#   | \ | | |  _ \  
+#   |  \| | | |_) | 
+#   | |\  | |  _ <  
+#   |_| \_| |_| \_\ 
+#   State Nationalist Reform | Strategic Operations
+#   Authorized Crawlers Only
 
+User-agent: *
+Allow: /
+
+# Block access to specific private or temporary assets
+Disallow: /private/
+Disallow: /temp/
+Disallow: /drafts/
+Disallow: /config/
+
+# Strategic delay to prevent server strain
+Crawl-delay: 10
+
+# Link to the Site Index
+Sitemap: https://statenationalistreform.info/sitemap.xml
+
+# "The Republic is not a public utility."
