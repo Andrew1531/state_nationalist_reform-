@@ -3,22 +3,23 @@
 #   |  \| | | |_) | 
 #   | |\  | |  _ <  
 #   |_| \_| |_| \_\ 
-#   State Nationalist Reform | Strategic Operations
+#   STATE NATIONALIST REFORM | Strategic Operations
 #   Authorized Crawlers Only
 
+# Apply rules to all search engine crawlers
 User-agent: *
-Allow: /
-
-# Block access to specific private or temporary assets
 Disallow: /private/
 Disallow: /temp/
 Disallow: /drafts/
 Disallow: /config/
+Disallow: /.env
+Disallow: /admin/
+Disallow: /backup/
 
-# Strategic delay to prevent server strain
-Crawl-delay: 10
+# Optional crawl delay to reduce server load (seconds)
+Crawl-delay: 5
 
-# Link to the Site Index
+# Link to sitemap for full site indexing
 Sitemap: https://statenationalistreform.info/sitemap.xml
 
 # "The Republic is not a public utility."
