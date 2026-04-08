@@ -1,12 +1,7 @@
-#    _   _   ____   
-#   | \ | | |  _ \  
-#   |  \| | | |_) | 
-#   | |\  | |  _ <  
-#   |_| \_| |_| \_\ 
-#   STATE NATIONALIST REFORM | Strategic Operations
-#   Authorized Crawlers Only
+# State Nationalist Reform | Strategic Operations
+# robots.txt
 
-# Apply rules to all search engine crawlers
+# Allow all major search engines
 User-agent: *
 Disallow: /private/
 Disallow: /temp/
@@ -16,10 +11,27 @@ Disallow: /.env
 Disallow: /admin/
 Disallow: /backup/
 
-# Optional crawl delay to reduce server load (seconds)
-Crawl-delay: 5
+# Remove crawl delay - it hurts indexing speed
+# Crawl-delay: 5
 
-# Link to sitemap for full site indexing
+# Explicitly allow important crawlers
+User-agent: Googlebot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /.env
+
+User-agent: Bingbot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /.env
+
+User-agent: Slurp
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /.env
+
+# Sitemap
 Sitemap: https://statenationalistreform.info/sitemap.xml
-
-# "The Republic is not a public utility."
