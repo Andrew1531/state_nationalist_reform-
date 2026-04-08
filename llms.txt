@@ -1,42 +1,81 @@
 STATE NATIONALIST REFORM | Strategic Operations - Technical Manifest
 
-Description:
-High-performance SPA focused on asset protection and jurisdictional standing, with a “paramilitary-corporate” aesthetic, interactive data visualization, and embedded intelligence.
+Description
 
-Tech Stack:
-Vanilla HTML5/JS (modular, ES6+), Tailwind CSS (bundled), Chart.js (interactive bar charts), Plotly.js (interactive Sankey diagrams), Rumble video (lazy-loaded), FormSubmit with client validation, Google Tag Manager with custom tracking.
+High-performance Single Page Application (SPA) focused on asset protection, jurisdictional standing, and constitutional wealth insulation. The site utilizes a "paramilitary-corporate" aesthetic to convey authority, featuring interactive data visualizations and secure intelligence resources.
 
-Design System:
-Colors: --pac-red #B91C1C, --pac-navy #0F172A, --pac-bone #F8FAFC
-Typography: Headers Oswald, Body Inter
-UI Patterns: Sharp edges, high-contrast borders, eased pulse animations, ARIA-compliant
+Tech Stack
 
-Navigation & Views:
-MapsTo(viewId) toggles sections with smooth transitions and keyboard navigation:
-Mission (#mission): Hero video + progress indicators
-Funding (#funding): Asset Insulation bar chart
-Standing (#standing): Sankey diagram with hover tooltips
-Vault (#vault): Top Secret document grid
+Core: Vanilla HTML5 / ES6+ JavaScript (Modular logic)
 
-Core JS Logic:
-navigation.js: Section visibility, active states, ARIA
-charts.js: Chart.js and Plotly initialization with lazy-load
-forms.js: FormSubmit POST + validation + honeypot
-utils.js: Smooth scroll, debounce, global config
+Styling: Tailwind CSS (Utility-first, bundled via CDN)
 
-Data Structures:
-Public Assets: Vessels of the State / Statutory
-Private Assets: 98-Series Protocol / Equitable Title
-Supports dynamic updates via JSON endpoints
+Visuals: - Chart.js (Interactive asset insulation bar charts)
 
-Inquiry System:
-Endpoint: https://formsubmit.co/tom@statenationalistreform.info
+Plotly.js (Interactive Sankey diagrams for jurisdictional flow)
 
-POST: Name, Email, Strategic Enquiry
-Client validation, honeypot, smooth feedback
+Video: Rumble Embed (Lazy-loaded for performance)
 
-Performance & UX:
-Lazy-load charts/videos, debounced scroll, ARIA support, mobile-responsive layouts, centralized config
+Forms: FormSubmit.co integration with custom client-side validation
 
-Optional Upgrades:
-PWA-ready, event tracking on charts, modular for future expansion
+Tracking: Google Tag Manager (G-C2153TK33Z)
+
+SEO & Metadata Strategy
+
+Primary Keywords: Asset Protection, Constitutional Law, Private Equity, Trust Protocol, 98-Series Indenture, Jurisdictional Standing.
+
+Structured Data: JSON-LD Organization schema implemented for high-authority search indexing.
+
+Social Graph: Full Open Graph (OG) and Twitter Card support for strategic link previews.
+
+Design System
+
+Palette:
+
+Primary Red: --pac-red (#B91C1C) - "Action/Alert"
+
+Deep Navy: --pac-navy (#0F172A) - "Authority/Background"
+
+Bone White: --pac-bone (#F8FAFC) - "Clarity/Readability"
+
+Typography:
+
+Headers: Oswald (Impact, all-caps)
+
+Body: Inter (Modern, high-legibility)
+
+Navigation Architecture
+
+The application uses MapsTo(viewId) to toggle visibility across four primary operational sectors:
+
+Mission (#mission): Strategic briefing, hero video, and progress indicators.
+
+Funding (#funding): Asset insulation data visualization (Chart.js).
+
+Standing (#standing): Sankey diagram (Plotly.js) showing the transition from public liability to private authority.
+
+Vault (#vault): Intelligence resource grid for 98-series protocols.
+
+Operational Logic
+
+State Management: In-memory navigation state with scroll-reset functionality.
+
+Lazy Initialization: Heavy visual components (Charts/Plotly) initialize only upon view activation to optimize First Contentful Paint (FCP).
+
+Security: CSRF protection via FormSubmit, honeypot potential, and secure link attributes (rel="noopener").
+
+Inquiry System
+
+Primary Endpoint: https://formsubmit.co/SNR_2026@proton.me
+
+Fields: Name, Secure Email, Strategic Enquiry.
+
+Flow: Direct POST with custom redirect headers for seamless UX.
+
+Performance Targets
+
+Fully mobile-responsive (fluid widths, no fixed pixels).
+
+Accessibility-compliant (SR-only labels, ARIA roles, semantic header hierarchy).
+
+Minimal external dependencies for rapid load times in low-bandwidth operational environments.
