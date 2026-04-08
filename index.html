@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2153TK33Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C2153TK33Z');
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2153TK33Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C2153TK33Z');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nationalist Reform | Strategic Operations</title>
+    
+    <!-- Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@400;700;900&display=swap');
 
@@ -39,13 +43,12 @@
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 100%;
             margin: auto;
             height: 300px;
         }
 
         .active-nav {
-            background-color: var(--pac-red);
+            background-color: var(--pac-red) !important;
             color: white !important;
         }
 
@@ -53,17 +56,15 @@
             background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
         }
 
-        /* Rumble Video Styling */
         .video-wrapper {
             border: 4px solid var(--pac-red);
             background: #000;
-            min-height: 300px;
+            aspect-ratio: 16/9;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Styling: Sharp edges, high contrast */
         button, input, textarea { border-radius: 0 !important; }
         .card { border-radius: 0 !important; border: 1px solid #E2E8F0; }
 
@@ -75,11 +76,23 @@
         .live-indicator {
             animation: pulse-red 2s infinite;
         }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
+
     <!-- Rumble Script Integration -->
-    <script>!function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u35d5dq"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");</script>
+    <script>
+        !function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u35d5dq"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");
+    </script>
 </head>
-</script>
+
 <body class="overflow-hidden h-screen flex flex-col">
 
     <!-- Top Impact Bar -->
@@ -97,11 +110,11 @@
             </div>
         </div>
         
-        <div class="flex gap-1 md:gap-4 overflow-x-auto">
-            <button onclick="navigateTo('mission')" class="nav-item active-nav px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all">Mission</button>
-            <button onclick="navigateTo('funding')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all">Funding/Trust</button>
-            <button onclick="navigateTo('standing')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all">Standing</button>
-            <button onclick="navigateTo('vault')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all">Vault</button>
+        <div class="flex gap-1 md:gap-4 overflow-x-auto no-scrollbar">
+            <button id="nav-mission" onclick="navigateTo('mission')" class="nav-item active-nav px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Mission</button>
+            <button id="nav-funding" onclick="navigateTo('funding')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Funding/Trust</button>
+            <button id="nav-standing" onclick="navigateTo('standing')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Standing</button>
+            <button id="nav-vault" onclick="navigateTo('vault')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Vault</button>
         </div>
 
         <div class="hidden lg:flex items-center gap-3 border-l border-slate-700 pl-6 cursor-pointer" onclick="scrollToContact()">
@@ -110,13 +123,12 @@
         </div>
     </nav>
 
-    <main class="flex-1 overflow-y-auto bg-slate-50 p-4 md:p-8" id="main-content">
+    <main class="flex-1 overflow-y-auto bg-slate-50" id="main-content">
 
         <!-- VIEW: MISSION (HOME) -->
-        <section id="mission" class="fade-in space-y-8">
-            <!-- Hero Section with Video -->
+        <section id="mission" class="fade-in">
             <div class="hero-gradient text-white p-8 md:p-12 border-b-8 border-red-700">
-                <div class="grid grid-cols-1 xl:grid-cols-5 gap-12 items-center">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-12 items-center">
                     <div class="xl:col-span-2 space-y-6">
                         <h2 class="text-5xl md:text-6xl font-black leading-none italic">Strategic <span class="text-red-600">Briefing</span></h2>
                         <p class="text-lg text-slate-300 font-light uppercase tracking-wide">Moving America’s Assets from Public Liability to Private Authority.</p>
@@ -136,9 +148,8 @@
                         </div>
                     </div>
 
-                    <!-- Video Embed Column -->
                     <div class="xl:col-span-3">
-                        <div class="video-wrapper shadow-2xl overflow-hidden relative" id="rumble-container">
+                        <div class="video-wrapper shadow-2xl overflow-hidden relative">
                              <div id="rumble_v3uu5ry"></div>
                              <script>Rumble("play", {"video":"v3uu5ry","div":"rumble_v3uu5ry"});</script>
                         </div>
@@ -147,33 +158,34 @@
                 </div>
             </div>
 
-            <!-- Intro text -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                <div class="md:col-span-2">
-                    <h3 class="text-2xl font-bold mb-4 border-l-4 border-red-700 pl-4 uppercase">Strategic Initiative Overview</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        Nationalist Reform is not just a movement; it is a structural intervention. We operate at the intersection of <strong>Constitutional Law</strong> and <strong>Private Equity</strong> to decouple individual wealth from state-managed liability. 
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        By deploying the <strong>Trust Protocol</strong>, we enable patriots to operate in a private capacity, shielded from the administrative state’s overreach while maintaining full equitable control of their estates.
-                    </p>
-                </div>
-                <div class="bg-white p-6 shadow-xl border border-slate-200">
-                    <h4 class="font-black text-sm uppercase mb-4 text-slate-400">Tactical Targets</h4>
-                    <ul class="space-y-3 font-bold text-xs uppercase">
-                        <li class="flex justify-between border-b pb-2"><span>Estate Tax</span> <span class="text-red-600">Eliminated</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>Public Nexus</span> <span class="text-red-600">Severed</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>Jurisdiction</span> <span class="text-red-600">Private</span></li>
-                        <li class="flex justify-between"><span>Title</span> <span class="text-red-600">Equitable</span></li>
-                    </ul>
+            <div class="max-w-7xl mx-auto p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold mb-4 border-l-4 border-red-700 pl-4 uppercase">Strategic Initiative Overview</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Nationalist Reform is not just a movement; it is a structural intervention. We operate at the intersection of <strong>Constitutional Law</strong> and <strong>Private Equity</strong> to decouple individual wealth from state-managed liability. 
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            By deploying the <strong>Trust Protocol</strong>, we enable patriots to operate in a private capacity, shielded from the administrative state’s overreach while maintaining full equitable control of their estates.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 shadow-xl border border-slate-200">
+                        <h4 class="font-black text-sm uppercase mb-4 text-slate-400">Tactical Targets</h4>
+                        <ul class="space-y-3 font-bold text-xs uppercase">
+                            <li class="flex justify-between border-b pb-2"><span>Estate Tax</span> <span class="text-red-600">Eliminated</span></li>
+                            <li class="flex justify-between border-b pb-2"><span>Public Nexus</span> <span class="text-red-600">Severed</span></li>
+                            <li class="flex justify-between border-b pb-2"><span>Jurisdiction</span> <span class="text-red-600">Private</span></li>
+                            <li class="flex justify-between"><span>Title</span> <span class="text-red-600">Equitable</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- VIEW: FUNDING/TRUST -->
-        <section id="funding" class="hidden fade-in space-y-8">
-            <div class="bg-white p-8 border border-slate-200 shadow-sm">
-                <h2 class="text-4xl font-black mb-2">Private Funding & <span class="text-red-700">Asset Insulation</span></h2>
+        <section id="funding" class="hidden fade-in p-8 md:p-12">
+            <div class="max-w-7xl mx-auto bg-white p-8 border border-slate-200 shadow-sm">
+                <h2 class="text-4xl font-black mb-2 uppercase">Private Funding & <span class="text-red-700">Asset Insulation</span></h2>
                 <p class="text-slate-500 uppercase text-xs tracking-[0.2em] mb-8">Financial Operations Directive 002</p>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -183,7 +195,7 @@
                             <canvas id="fundingChart"></canvas>
                         </div>
                     </div>
-                    <div class="bg-slate-900 text-white p-8">
+                    <div class="bg-slate-900 text-white p-8 flex flex-col justify-center">
                         <h3 class="text-xl font-bold mb-6 uppercase text-red-500 italic">The "War Chest" Protection</h3>
                         <div class="space-y-6">
                             <div class="flex gap-4">
@@ -200,15 +212,15 @@
             </div>
         </section>
 
-        <!-- VIEW: STANDING (UPDATED) -->
-        <section id="standing" class="hidden fade-in space-y-8">
-            <div class="bg-white p-8 border border-slate-200 shadow-sm text-center max-w-6xl mx-auto">
+        <!-- VIEW: STANDING -->
+        <section id="standing" class="hidden fade-in p-8 md:p-12">
+            <div class="max-w-7xl mx-auto bg-white p-8 border border-slate-200 shadow-sm text-center">
                 <h2 class="text-5xl font-black mb-4 uppercase">The Jurisdictional <span class="text-red-700">Shield</span></h2>
                 <p class="text-slate-500 uppercase text-xs tracking-[0.4em] mb-12">Visualizing the Operational Separation of Assets</p>
                 
-                <div class="bg-slate-50 p-6 md:p-12 border border-slate-200 shadow-inner">
+                <div class="bg-slate-50 p-6 md:p-12 border border-slate-200 shadow-inner overflow-x-auto">
                     <h3 class="text-2xl font-black mb-8 uppercase text-slate-400 tracking-tighter">Asset Flow: From Public Liability to Private Authority</h3>
-                    <div id="standingSankey" class="w-full h-[500px]"></div>
+                    <div id="standingSankey" class="w-full min-w-[600px] h-[500px]"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-left">
@@ -221,7 +233,7 @@
                     <div class="bg-slate-900 p-6 border-l-4 border-red-700 text-white">
                         <h4 class="text-red-500 font-black uppercase mb-2">Protected (Trust)</h4>
                         <p class="text-xs text-slate-300 uppercase font-bold leading-relaxed">
-                            By placing equity in a 98-series protocol, you sever the legal nexus to the public person. Courts cannot "see" or "touch" what is held in a private capacity, effectively making the assets invisible to the statutory system.
+                            By placing equity in a 98-series protocol, you sever the legal nexus to the public person. Courts cannot "see" or "touch" what is held in a private capacity.
                         </p>
                     </div>
                 </div>
@@ -233,50 +245,48 @@
         </section>
 
         <!-- VIEW: VAULT -->
-        <section id="vault" class="hidden fade-in space-y-8">
-            <div class="flex justify-between items-end mb-8">
-                <h2 class="text-4xl font-black uppercase">Intelligence <span class="text-red-700">Vault</span></h2>
-                <div class="text-right">
-                    <span class="text-[10px] font-bold text-slate-400 uppercase">Clearance Level</span>
-                    <p class="text-sm font-black text-red-700 uppercase">Top Secret / Private</p>
+        <section id="vault" class="hidden fade-in p-8 md:p-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 class="text-4xl font-black uppercase">Intelligence <span class="text-red-700">Vault</span></h2>
+                    <div class="text-right">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Clearance Level</span>
+                        <p class="text-sm font-black text-red-700 uppercase">Top Secret / Private</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="vaultGrid">
-                <!-- Box 1 -->
-                <div class="bg-slate-900 text-white p-6 border border-slate-800">
-                    <div class="text-3xl mb-4 text-red-600">📂</div>
-                    <h4 class="font-bold text-sm uppercase mb-2">98-Series Indenture</h4>
-                    <p class="text-[10px] text-slate-400 uppercase leading-tight">The core constitutional contract for private estate management. Proprietary documentation available only to active operations.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-slate-900 text-white p-6 border border-slate-800">
+                        <div class="text-3xl mb-4 text-red-600">📂</div>
+                        <h4 class="font-bold text-sm uppercase mb-2">98-Series Indenture</h4>
+                        <p class="text-[10px] text-slate-400 uppercase leading-tight">The core constitutional contract for private estate management.</p>
+                    </div>
+                    <div class="bg-white border p-6">
+                        <div class="text-3xl mb-4">⚖️</div>
+                        <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">UCC-1 Filings</h4>
+                        <p class="text-[10px] text-slate-500 uppercase leading-tight">Strategic methods for notifying the public record of superior interest.</p>
+                    </div>
+                    <div class="bg-white border p-6">
+                        <div class="text-3xl mb-4">📜</div>
+                        <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">Status Affidavit</h4>
+                        <p class="text-[10px] text-slate-500 uppercase leading-tight">Formal protocols for the declaration of life and standing.</p>
+                    </div>
+                    <div class="bg-slate-900 text-white p-6 border border-slate-800">
+                        <div class="text-3xl mb-4 text-red-600">⚡</div>
+                        <h4 class="font-bold text-sm uppercase mb-2">Operational Manual</h4>
+                        <p class="text-[10px] text-slate-400 uppercase leading-tight">Step-by-step instructions for Trust administration.</p>
+                    </div>
                 </div>
-                <!-- Box 2 -->
-                <div class="bg-white border p-6">
-                    <div class="text-3xl mb-4">⚖️</div>
-                    <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">UCC-1 Filings</h4>
-                    <p class="text-[10px] text-slate-500 uppercase leading-tight">Strategic methods for notifying the public record of superior interest and securing first-lien position.</p>
+                
+                <div class="mt-8 text-center bg-red-700/10 p-4 border border-red-700/20">
+                    <p class="text-xs font-black uppercase tracking-widest text-red-700">Note: Digital assets are offline for security. Enquire below for physical copies.</p>
                 </div>
-                <!-- Box 3 -->
-                <div class="bg-white border p-6">
-                    <div class="text-3xl mb-4">📜</div>
-                    <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">Status Affidavit</h4>
-                    <p class="text-[10px] text-slate-500 uppercase leading-tight">Formal protocols for the declaration of life and standing within the private record for jurisdictional immunity.</p>
-                </div>
-                <!-- Box 4 -->
-                <div class="bg-slate-900 text-white p-6 border border-slate-800">
-                    <div class="text-3xl mb-4 text-red-600">⚡</div>
-                    <h4 class="font-bold text-sm uppercase mb-2">Operational Manual</h4>
-                    <p class="text-[10px] text-slate-400 uppercase leading-tight">Exhaustive step-by-step instructions for Trust administration and asset control under private authority.</p>
-                </div>
-            </div>
-            
-            <div class="mt-8 text-center bg-red-700/10 p-4 border border-red-700/20">
-                <p class="text-xs font-black uppercase tracking-widest text-red-700">Note: Digital assets are offline for security. Enquire below for physical copies.</p>
             </div>
         </section>
 
         <!-- STRATEGIC INQUIRY FORM -->
-        <section id="contact-form-section" class="mt-16 bg-slate-900 text-white p-8 md:p-12 border-t-8 border-red-700">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section id="contact-form-section" class="bg-slate-900 text-white p-8 md:p-12 border-t-8 border-red-700">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
                     <h3 class="text-4xl font-black uppercase mb-4 tracking-tighter">Submit <span class="text-red-700">Inquiry</span></h3>
                     <p class="text-slate-400 text-sm mb-8 uppercase tracking-widest leading-relaxed">
@@ -297,14 +307,14 @@
         </section>
 
         <!-- LEGAL NOTICE SECTION -->
-        <section class="mt-16 pt-8 pb-12 border-t border-slate-200">
-            <div class="max-w-4xl mx-auto text-center space-y-6">
+        <section class="max-w-7xl mx-auto p-8 md:p-12">
+            <div class="text-center space-y-6">
                 <p class="text-sm font-black text-slate-900 uppercase tracking-widest">
-                    ©️ 2026 State Nationalist Reform. All rights reserved.
+                    © 2026 State Nationalist Reform. All rights reserved.
                 </p>
                 <div class="bg-slate-100 p-6 border border-slate-200 text-left">
                     <p class="text-[11px] leading-relaxed text-slate-500 uppercase font-medium">
-                        <span class="text-red-700 font-black">Notice:</span> State Nationalist Reform is not a legal service provider. The information and content on this platform are for educational purposes only and do not constitute legal advice. By accessing our resources, you acknowledge that we are not liable for any decisions or actions taken based on the information provided.
+                        <span class="text-red-700 font-black">Notice:</span> State Nationalist Reform is not a legal service provider. The information and content on this platform are for educational purposes only and do not constitute legal advice.
                     </p>
                 </div>
             </div>
@@ -322,25 +332,33 @@
 
     <script>
         function navigateTo(viewId) {
+            // Hide all views
             ['mission', 'funding', 'standing', 'vault'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.classList.add('hidden');
             });
+
+            // Show target view
             const target = document.getElementById(viewId);
             if (target) {
                 target.classList.remove('hidden');
                 document.getElementById('main-content').scrollTop = 0;
             }
 
+            // Update Nav State
             document.querySelectorAll('.nav-item').forEach(btn => {
                 btn.classList.remove('active-nav');
-                if(btn.innerText.toLowerCase().includes(viewId)) {
+                if(btn.id === 'nav-' + viewId) {
                     btn.classList.add('active-nav');
                 }
             });
 
+            // Trigger Specific view logic
             if(viewId === 'standing') {
                 setTimeout(renderStandingFlow, 100);
+            }
+            if(viewId === 'funding') {
+                setTimeout(initCharts, 100);
             }
         }
 
@@ -351,12 +369,17 @@
             }
         }
 
+        let fundingChartInstance = null;
         function initCharts() {
             const chartEl = document.getElementById('fundingChart');
             if (!chartEl) return;
 
+            if (fundingChartInstance) {
+                fundingChartInstance.destroy();
+            }
+
             const ctx = chartEl.getContext('2d');
-            new Chart(ctx, {
+            fundingChartInstance = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: ['Liquidity', 'Real Estate', 'Equities', 'Privacy'],
@@ -369,7 +392,12 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     indexAxis: 'y',
-                    plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 10 } } } }
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 10 } } } 
+                    },
+                    scales: {
+                        x: { beginAtZero: true, max: 100 }
+                    }
                 }
             });
         }
@@ -393,13 +421,12 @@
                         "PRIVATE EQUITY", 
                         "PROTECTED ASSETS"
                     ],
-                    // High contrast colors: Red for protection/flow, Navy for state/public
                     color: ["#0F172A", "#0F172A", "#64748B", "#B91C1C", "#B91C1C", "#B91C1C"]
                 },
                 link: {
                     source: [0, 1, 2, 2, 3, 4],
                     target: [2, 2, 1, 3, 4, 5],
-                    value:  [100, 100, 150, 100, 100, 100], // Visualizes the "Drain" from public to private
+                    value:  [100, 100, 150, 100, 100, 100],
                     color: ["#cbd5e1", "#cbd5e1", "#fee2e2", "#fecaca", "#ef4444", "#b91c1c"]
                 }
             }];
@@ -414,8 +441,10 @@
             Plotly.newPlot('standingSankey', data, layout, {displayModeBar: false, responsive: true});
         }
 
+        // Initialize state on load
         window.onload = () => {
-            initCharts();
+            // Check if we need to load specific data based on landing view
+            // Mission is default
         };
     </script>
 </body>
