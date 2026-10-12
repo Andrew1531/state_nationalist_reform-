@@ -1,5 +1,8 @@
 function scrollToContact(){const element=document.getElementById("contact-form-section");if(element)element.scrollIntoView({behavior:"smooth"});}
 
+async function copyBaseUsdcAddress(){const addressElement=document.getElementById("base-usdc-address");const status=document.getElementById("base-usdc-copy-status");if(!addressElement||!status)return;try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error("Clipboard unavailable");await navigator.clipboard.writeText(addressElement.textContent.trim());status.textContent="Base USDC address copied.";}catch{status.textContent="Copy failed. Select the address above and copy it manually.";}}
+window.copyBaseUsdcAddress=copyBaseUsdcAddress;
+
 let fundingChartInstance=null;
 function initCharts(){const chartEl=document.getElementById("fundingChart");if(!chartEl||!window.Chart)return;if(fundingChartInstance)fundingChartInstance.destroy();fundingChartInstance=new window.Chart(chartEl.getContext("2d"),{type:"bar",data:{labels:["Liquidity","Real Estate","Equities","Privacy"],datasets:[{label:"Public Status (Exposed)",data:[65,80,55,10],backgroundColor:"#1E293B"},{label:"SNR Trust (Insulated)",data:[95,100,90,100],backgroundColor:"#B91C1C"}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:"y",plugins:{legend:{position:"bottom",labels:{font:{weight:"bold",size:10}}}},scales:{x:{beginAtZero:true,max:100}}}});}
 
