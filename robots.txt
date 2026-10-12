@@ -1,5 +1,5 @@
 # State Nationalist Reform | Strategic Operations
-# https://statenationalistreform.info/robots.txt
+# https://statenationalistreform.com/robots.txt
 
 # ─────────────────────────────────────────────────────────────
 # ALL CRAWLERS
@@ -14,7 +14,7 @@ Disallow: /admin/
 Disallow: /backup/
 Disallow: /api/internal/
 
-Sitemap: https://statenationalistreform.info/sitemap.xml
+Sitemap: https://statenationalistreform.com/sitemap.xml
 
 
 # ─────────────────────────────────────────────────────────────

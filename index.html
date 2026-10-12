@@ -12,125 +12,49 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nationalist Reform | Strategic Operations</title>
-    
-    <!-- Dependencies -->
+    <meta name="description" content="Home page for State Nationalist Reform, with links to the Mission, Funding and Trust, Standing, and Vault pages.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://statenationalistreform.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="State Nationalist Reform | Home">
+    <meta property="og:description" content="Home page for State Nationalist Reform, with links to the Mission, Funding and Trust, Standing, and Vault pages.">
+    <meta property="og:url" content="https://statenationalistreform.com/">
+    <title>State Nationalist Reform | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@400;700;900&display=swap');
-
-        :root {
-            --pac-red: #B91C1C;
-            --pac-navy: #0F172A;
-            --pac-bone: #F8FAFC;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--pac-bone);
-            color: var(--pac-navy);
-        }
-        
-        h1, h2, h3, .impact-font {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            margin: auto;
-            height: 300px;
-        }
-
-        .active-nav {
-            background-color: var(--pac-red) !important;
-            color: white !important;
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-        }
-
-        .video-wrapper {
-            border: 4px solid var(--pac-red);
-            background: #000;
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        button, input, textarea { border-radius: 0 !important; }
-        .card { border-radius: 0 !important; border: 1px solid #E2E8F0; }
-
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(185, 28, 28, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(185, 28, 28, 0); }
-        }
-        .live-indicator {
-            animation: pulse-red 2s infinite;
-        }
-
-        .fade-in {
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-
+    <link rel="stylesheet" href="site.css">
     <!-- Rumble Script Integration -->
     <script>
         !function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u35d5dq"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");
     </script>
 </head>
-
 <body class="overflow-hidden h-screen flex flex-col">
-
-    <!-- Top Impact Bar -->
-    <div class="bg-red-700 text-white text-[10px] font-bold tracking-[0.4em] py-2 text-center uppercase shrink-0">
-        Restoring the Republic • Private National Interest • Authorized Personnel Only
-    </div>
-
-    <!-- Main Navigation Header -->
-    <nav class="bg-slate-900 text-white px-6 py-4 flex justify-between items-center shadow-2xl z-50 shrink-0">
-        <div class="flex items-center gap-4">
-            <div class="bg-red-700 p-2 font-black text-xl italic tracking-tighter cursor-pointer" onclick="navigateTo('mission')">SNR</div>
-            <div class="hidden md:block cursor-pointer" onclick="navigateTo('mission')">
-                <h1 class="text-xl leading-none">State Nationalist Reform</h1>
-                <p class="text-[9px] uppercase tracking-widest text-red-500 font-bold">Strategic Operations</p>
-            </div>
+    <div class="bg-red-700 text-white text-[10px] font-bold tracking-[0.4em] py-2 text-center uppercase shrink-0">Restoring the Republic • Private National Interest • Authorized Personnel Only</div>
+    <nav class="bg-slate-900 text-white px-4 md:px-6 py-4 flex justify-between items-center shadow-2xl z-50 shrink-0 gap-4" aria-label="Main navigation">
+        <div class="flex items-center gap-3 md:gap-4 shrink-0">
+            <a href="index.html" aria-label="State Nationalist Reform home" class="bg-red-700 p-2 font-black text-xl italic tracking-tighter">SNR</a>
+            <a href="index.html" class="hidden md:block text-white no-underline">
+                <span class="text-xl leading-none block">State Nationalist Reform</span>
+                <span class="text-[9px] uppercase tracking-widest text-red-500 font-bold">Strategic Operations</span>
+            </a>
         </div>
-        
-        <div class="flex gap-1 md:gap-4 overflow-x-auto no-scrollbar">
-            <button id="nav-mission" onclick="navigateTo('mission')" class="nav-item active-nav px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Mission</button>
-            <button id="nav-funding" onclick="navigateTo('funding')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Funding/Trust</button>
-            <button id="nav-standing" onclick="navigateTo('standing')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Standing</button>
-            <button id="nav-vault" onclick="navigateTo('vault')" class="nav-item px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap">Vault</button>
+        <div class="flex gap-1 md:gap-2 overflow-x-auto no-scrollbar">
+                <a id="nav-home" href="index.html" class="nav-item active-nav px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500" aria-current="page">Home</a>
+                <a id="nav-mission" href="mission.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Mission</a>
+                <a id="nav-funding" href="funding-trust.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Funding/Trust</a>
+                <a id="nav-standing" href="standing.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Standing</a>
+                <a id="nav-vault" href="vault.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Vault</a>
         </div>
-
-        <div class="hidden lg:flex items-center gap-3 border-l border-slate-700 pl-6 cursor-pointer" onclick="scrollToContact()">
-            <div class="w-3 h-3 bg-red-600 rounded-full live-indicator"></div>
+        <button type="button" class="hidden lg:flex items-center gap-3 border-l border-slate-700 pl-6" onclick="scrollToContact()">
+            <span class="w-3 h-3 bg-red-600 rounded-full live-indicator" aria-hidden="true"></span>
             <span class="text-[10px] font-black uppercase tracking-widest">Live: Ops Room</span>
-        </div>
+        </button>
     </nav>
-
     <main class="flex-1 overflow-y-auto bg-slate-50" id="main-content">
-
-        <!-- VIEW: MISSION (HOME) -->
-        <section id="mission" class="fade-in">
+<section id="home" class="fade-in">
             <div class="hero-gradient text-white p-8 md:p-12 border-b-8 border-red-700">
                 <div class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-12 items-center">
                     <div class="xl:col-span-2 space-y-6">
-                        <h2 class="text-5xl md:text-6xl font-black leading-none italic">Strategic <span class="text-red-600">Briefing</span></h2>
+                        <h1 class="text-5xl md:text-6xl font-black leading-none italic">Strategic <span class="text-red-600">Briefing</span></h1>
                         <p class="text-lg text-slate-300 font-light uppercase tracking-wide">Moving America’s Assets from Public Liability to Private Authority.</p>
                         
                         <div class="bg-slate-800/50 p-6 border border-slate-700 w-full">
@@ -158,134 +82,20 @@
                 </div>
             </div>
 
-            <div class="max-w-7xl mx-auto p-8 md:p-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                    <div class="md:col-span-2">
-                        <h3 class="text-2xl font-bold mb-4 border-l-4 border-red-700 pl-4 uppercase">Strategic Initiative Overview</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            Nationalist Reform is not just a movement; it is a structural intervention. We operate at the intersection of <strong>Constitutional Law</strong> and <strong>Private Equity</strong> to decouple individual wealth from state-managed liability. 
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            By deploying the <strong>Trust Protocol</strong>, we enable patriots to operate in a private capacity, shielded from the administrative state’s overreach while maintaining full equitable control of their estates.
-                        </p>
-                    </div>
-                    <div class="bg-white p-6 shadow-xl border border-slate-200">
-                        <h4 class="font-black text-sm uppercase mb-4 text-slate-400">Tactical Targets</h4>
-                        <ul class="space-y-3 font-bold text-xs uppercase">
-                            <li class="flex justify-between border-b pb-2"><span>Estate Tax</span> <span class="text-red-600">Eliminated</span></li>
-                            <li class="flex justify-between border-b pb-2"><span>Public Nexus</span> <span class="text-red-600">Severed</span></li>
-                            <li class="flex justify-between border-b pb-2"><span>Jurisdiction</span> <span class="text-red-600">Private</span></li>
-                            <li class="flex justify-between"><span>Title</span> <span class="text-red-600">Equitable</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- VIEW: FUNDING/TRUST -->
-        <section id="funding" class="hidden fade-in p-8 md:p-12">
-            <div class="max-w-7xl mx-auto bg-white p-8 border border-slate-200 shadow-sm">
-                <h2 class="text-4xl font-black mb-2 uppercase">Private Funding & <span class="text-red-700">Asset Insulation</span></h2>
-                <p class="text-slate-500 uppercase text-xs tracking-[0.2em] mb-8">Financial Operations Directive 002</p>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4 uppercase">Asset Distribution: Public vs. Private</h3>
-                        <div class="chart-container">
-                            <canvas id="fundingChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 text-white p-8 flex flex-col justify-center">
-                        <h3 class="text-xl font-bold mb-6 uppercase text-red-500 italic">The "War Chest" Protection</h3>
-                        <div class="space-y-6">
-                            <div class="flex gap-4">
-                                <div class="text-3xl">🛡️</div>
-                                <div>
-                                    <h4 class="font-bold uppercase text-sm">Non-Statutory Status</h4>
-                                    <p class="text-xs text-slate-400">Assets are held by a foreign-domiciled trust entity, removing them from domestic probate and tax courts.</p>
-                                </div>
-                            </div>
-                            <button onclick="scrollToContact()" class="w-full bg-red-700 py-4 font-black uppercase tracking-widest hover:bg-red-800 transition-all mt-4">Begin Asset Transfer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- VIEW: STANDING -->
-        <section id="standing" class="hidden fade-in p-8 md:p-12">
-            <div class="max-w-7xl mx-auto bg-white p-8 border border-slate-200 shadow-sm text-center">
-                <h2 class="text-5xl font-black mb-4 uppercase">The Jurisdictional <span class="text-red-700">Shield</span></h2>
-                <p class="text-slate-500 uppercase text-xs tracking-[0.4em] mb-12">Visualizing the Operational Separation of Assets</p>
-                
-                <div class="bg-slate-50 p-6 md:p-12 border border-slate-200 shadow-inner overflow-x-auto">
-                    <h3 class="text-2xl font-black mb-8 uppercase text-slate-400 tracking-tighter">Asset Flow: From Public Liability to Private Authority</h3>
-                    <div id="standingSankey" class="w-full min-w-[600px] h-[500px]"></div>
+            <section class="max-w-7xl mx-auto p-8 md:p-12" aria-labelledby="site-pages-title">
+                <h2 id="site-pages-title" class="text-2xl font-black uppercase border-l-4 border-red-700 pl-4 mb-6">Explore the site</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <a href="mission.html" class="block bg-white border border-slate-200 p-6 hover:border-red-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><h3 class="font-black uppercase text-lg">Mission</h3><p class="mt-2 text-xs text-slate-600">Strategic initiative overview and mission materials.</p></a>
+                    <a href="funding-trust.html" class="block bg-white border border-slate-200 p-6 hover:border-red-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><h3 class="font-black uppercase text-lg">Funding / Trust</h3><p class="mt-2 text-xs text-slate-600">Funding information and the asset-distribution visualization.</p></a>
+                    <a href="standing.html" class="block bg-white border border-slate-200 p-6 hover:border-red-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><h3 class="font-black uppercase text-lg">Standing</h3><p class="mt-2 text-xs text-slate-600">Jurisdictional standing materials and flow diagram.</p></a>
+                    <a href="vault.html" class="block bg-white border border-slate-200 p-6 hover:border-red-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><h3 class="font-black uppercase text-lg">Vault</h3><p class="mt-2 text-xs text-slate-600">Resource listings and Vault materials.</p></a>
                 </div>
+            </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-left">
-                    <div class="bg-red-50 p-6 border-l-4 border-red-700">
-                        <h4 class="text-red-700 font-black uppercase mb-2">Vulnerable (Public)</h4>
-                        <p class="text-xs text-slate-600 uppercase font-bold leading-relaxed">
-                            Under statutory jurisdiction, courts treat you as a "vessel" of the state. Your property is collateral for the national debt, making it accessible to judicial liens, probate seizures, and administrative levies.
-                        </p>
-                    </div>
-                    <div class="bg-slate-900 p-6 border-l-4 border-red-700 text-white">
-                        <h4 class="text-red-500 font-black uppercase mb-2">Protected (Trust)</h4>
-                        <p class="text-xs text-slate-300 uppercase font-bold leading-relaxed">
-                            By placing equity in a 98-series protocol, you sever the legal nexus to the public person. Courts cannot "see" or "touch" what is held in a private capacity.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mt-12">
-                    <button onclick="scrollToContact()" class="bg-red-700 text-white px-12 py-5 font-black uppercase tracking-[0.2em] hover:bg-red-800 transition-all shadow-xl">Secure Your Standing Now</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- VIEW: VAULT -->
-        <section id="vault" class="hidden fade-in p-8 md:p-12">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex justify-between items-end mb-8">
-                    <h2 class="text-4xl font-black uppercase">Intelligence <span class="text-red-700">Vault</span></h2>
-                    <div class="text-right">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase">Clearance Level</span>
-                        <p class="text-sm font-black text-red-700 uppercase">Top Secret / Private</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-slate-900 text-white p-6 border border-slate-800">
-                        <div class="text-3xl mb-4 text-red-600">📂</div>
-                        <h4 class="font-bold text-sm uppercase mb-2">98-Series Indenture</h4>
-                        <p class="text-[10px] text-slate-400 uppercase leading-tight">The core constitutional contract for private estate management.</p>
-                    </div>
-                    <div class="bg-white border p-6">
-                        <div class="text-3xl mb-4">⚖️</div>
-                        <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">UCC-1 Filings</h4>
-                        <p class="text-[10px] text-slate-500 uppercase leading-tight">Strategic methods for notifying the public record of superior interest.</p>
-                    </div>
-                    <div class="bg-white border p-6">
-                        <div class="text-3xl mb-4">📜</div>
-                        <h4 class="font-bold text-sm uppercase mb-2 text-slate-900">Status Affidavit</h4>
-                        <p class="text-[10px] text-slate-500 uppercase leading-tight">Formal protocols for the declaration of life and standing.</p>
-                    </div>
-                    <div class="bg-slate-900 text-white p-6 border border-slate-800">
-                        <div class="text-3xl mb-4 text-red-600">⚡</div>
-                        <h4 class="font-bold text-sm uppercase mb-2">Operational Manual</h4>
-                        <p class="text-[10px] text-slate-400 uppercase leading-tight">Step-by-step instructions for Trust administration.</p>
-                    </div>
-                </div>
-                
-                <div class="mt-8 text-center bg-red-700/10 p-4 border border-red-700/20">
-                    <p class="text-xs font-black uppercase tracking-widest text-red-700">Note: Digital assets are offline for security. Enquire below for physical copies.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- STRATEGIC INQUIRY FORM -->
-        <section id="contact-form-section" class="bg-slate-900 text-white p-8 md:p-12 border-t-8 border-red-700">
+</section>
+<section id="contact-form-section" class="bg-slate-900 text-white p-8 md:p-12 border-t-8 border-red-700">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
                     <h3 class="text-4xl font-black uppercase mb-4 tracking-tighter">Submit <span class="text-red-700">Inquiry</span></h3>
@@ -319,9 +129,7 @@
                 </div>
             </div>
         </section>
-
     </main>
-
     <!-- Global Footer -->
     <footer class="bg-slate-900 text-white text-[10px] p-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center font-bold uppercase tracking-widest gap-4 shrink-0">
         <div>Proprietary Information of State Nationalist Reform • No public funds used</div>
@@ -329,123 +137,6 @@
             Powered by <a href="https://ladmedia.co" target="_blank" class="text-red-500 hover:text-red-400 transition-colors underline decoration-2 underline-offset-4">LAD MEDIA</a>
         </div>
     </footer>
-
-    <script>
-        function navigateTo(viewId) {
-            // Hide all views
-            ['mission', 'funding', 'standing', 'vault'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.classList.add('hidden');
-            });
-
-            // Show target view
-            const target = document.getElementById(viewId);
-            if (target) {
-                target.classList.remove('hidden');
-                document.getElementById('main-content').scrollTop = 0;
-            }
-
-            // Update Nav State
-            document.querySelectorAll('.nav-item').forEach(btn => {
-                btn.classList.remove('active-nav');
-                if(btn.id === 'nav-' + viewId) {
-                    btn.classList.add('active-nav');
-                }
-            });
-
-            // Trigger Specific view logic
-            if(viewId === 'standing') {
-                setTimeout(renderStandingFlow, 100);
-            }
-            if(viewId === 'funding') {
-                setTimeout(initCharts, 100);
-            }
-        }
-
-        function scrollToContact() {
-            const formElement = document.getElementById('contact-form-section');
-            if (formElement) {
-                formElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        let fundingChartInstance = null;
-        function initCharts() {
-            const chartEl = document.getElementById('fundingChart');
-            if (!chartEl) return;
-
-            if (fundingChartInstance) {
-                fundingChartInstance.destroy();
-            }
-
-            const ctx = chartEl.getContext('2d');
-            fundingChartInstance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Liquidity', 'Real Estate', 'Equities', 'Privacy'],
-                    datasets: [
-                        { label: 'Public Status (Exposed)', data: [65, 80, 55, 10], backgroundColor: '#1E293B' },
-                        { label: 'SNR Trust (Insulated)', data: [95, 100, 90, 100], backgroundColor: '#B91C1C' }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y',
-                    plugins: { 
-                        legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 10 } } } 
-                    },
-                    scales: {
-                        x: { beginAtZero: true, max: 100 }
-                    }
-                }
-            });
-        }
-
-        function renderStandingFlow() {
-            const sankeyEl = document.getElementById('standingSankey');
-            if (!sankeyEl) return;
-
-            const data = [{
-                type: "sankey",
-                orientation: "h",
-                node: {
-                    pad: 20,
-                    thickness: 30,
-                    line: { color: "black", width: 0.5 },
-                    label: [
-                        "FEDERAL RESERVES", 
-                        "STATE COURTS", 
-                        "PUBLIC NEXUS (LIABILITY)", 
-                        "NATIONAL REFORM PROTOCOL", 
-                        "PRIVATE EQUITY", 
-                        "PROTECTED ASSETS"
-                    ],
-                    color: ["#0F172A", "#0F172A", "#64748B", "#B91C1C", "#B91C1C", "#B91C1C"]
-                },
-                link: {
-                    source: [0, 1, 2, 2, 3, 4],
-                    target: [2, 2, 1, 3, 4, 5],
-                    value:  [100, 100, 150, 100, 100, 100],
-                    color: ["#cbd5e1", "#cbd5e1", "#fee2e2", "#fecaca", "#ef4444", "#b91c1c"]
-                }
-            }];
-
-            const layout = {
-                font: { size: 12, family: 'Oswald', color: '#0F172A' },
-                paper_bgcolor: 'rgba(0,0,0,0)',
-                plot_bgcolor: 'rgba(0,0,0,0)',
-                margin: { l: 20, r: 20, b: 20, t: 20 }
-            };
-
-            Plotly.newPlot('standingSankey', data, layout, {displayModeBar: false, responsive: true});
-        }
-
-        // Initialize state on load
-        window.onload = () => {
-            // Check if we need to load specific data based on landing view
-            // Mission is default
-        };
-    </script>
+    <script type="module" src="site.js"></script>
 </body>
 </html>

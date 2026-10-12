@@ -1,46 +1,11 @@
-# STATE NATIONALIST REFORM
+# State Nationalist Reform
 
-> Strategic operations platform focused on asset protection, jurisdictional
-> standing, and constitutional wealth insulation. Delivered as a
-> high-performance single-page application with interactive data
-> visualization and secure intelligence resources.
+> Public website with separate Home, Mission, Funding/Trust, Standing, and Vault pages.
 
-STATE NATIONALIST REFORM is a web-based intelligence and operations
-platform organized around four operational sectors: Mission, Funding,
-Standing, and Vault. The application presents strategic briefings,
-asset insulation data visualizations, jurisdictional flow analysis, and
-a curated resource grid covering 98-Series protocols. The platform is
-built for low-bandwidth operational environments and is fully
-mobile-responsive.
+## Pages
 
-## Mission
-
-- [Strategic Briefing](/): Overview of the platform's purpose, hero video, and progress indicators.
-
-## Funding
-
-- [Asset Insulation Visualization](/): Interactive bar charts (Chart.js) illustrating asset insulation data.
-
-## Standing
-
-- [Jurisdictional Flow Diagram](/): Interactive Sankey diagram (Plotly.js) mapping the transition from public liability to private authority.
-
-## Vault
-
-- [98-Series Protocol Resources](/): Intelligence resource grid covering 98-Series protocols and related materials.
-
-## Inquiry
-
-- [Strategic Enquiry Form](/): Secure contact form (Name, Secure Email, Strategic Enquiry). Submissions are delivered via FormSubmit.co.
-
-## Technical
-
-- Stack: Vanilla HTML5 / ES6+ JavaScript, Tailwind CSS (CDN), Chart.js, Plotly.js
-- Media: Rumble embed (lazy-loaded)
-- Analytics: Google Tag Manager / Google Analytics 4 (G-C2153TK33Z)
-- Accessibility: WCAG-aligned — semantic headings, ARIA roles, SR-only labels
-- Security: CSRF protection via FormSubmit, honeypot field, rel="noopener" on external links
-
-## Contact
-
-- Strategic enquiries: SNR_2026@proton.me
+- [Home](https://statenationalistreform.com/): Strategic briefing and links to the site's main sections.
+- [Mission](https://statenationalistreform.com/mission.html): Strategic initiative overview.
+- [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Funding materials and asset-distribution visualization.
+- [Standing](https://statenationalistreform.com/standing.html): Standing materials and jurisdictional flow visualization.
+- [Vault](https://statenationalistreform.com/vault.html): Vault resource listings.
