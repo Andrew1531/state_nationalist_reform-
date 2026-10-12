@@ -1,18 +1,13 @@
 # State Nationalist Reform
 
-> Public website for State Nationalist Reform, organized into five separate, indexable pages on https://statenationalistreform.com/.
+> Public website for State Nationalist Reform, organized into five separate, indexable pages on https://statenationalistreform.com/. The site shares educational trust-related materials and is not a legal service provider.
 
 ## Pages
 
-- [Home](https://statenationalistreform.com/): Strategic briefing and navigation to the site's main sections.
-- [Mission](https://statenationalistreform.com/mission.html): Mission and strategic initiatives.
-- [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Funding materials and asset-distribution visualization.
-- [Standing](https://statenationalistreform.com/standing.html): Standing information and jurisdictional-flow visualization.
-- [Vault](https://statenationalistreform.com/vault.html): Vault resource listings and optional direct USDC transfer on Base.
+- [Home](https://statenationalistreform.com/): Trust information, educational resources, and links to the site's main sections.
+- [Mission](https://statenationalistreform.com/mission.html): Trust stewardship mission and strategic initiatives.
+- [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Trust funding materials and an asset-distribution illustration.
+- [Standing](https://statenationalistreform.com/standing.html): Standing materials and a conceptual relationship diagram; the diagram is not quantitative or legal advice.
+- [Vault](https://statenationalistreform.com/vault.html): Trust administration resource descriptions.
 
-## Payment behavior
-
-- The Vault displays an optional direct transfer of USDC on Base.
-- No fixed amount is listed, and payment is not required to browse.
-- The website does not verify transfers or unlock content based on payment.
-- x402 is not enabled; the transfer card is not a checkout or paywall.
+State Nationalist Reform does not provide legal services or legal advice. Consult a qualified attorney about your circumstances. No payment method or resource-gating checkout is currently offered on the site.

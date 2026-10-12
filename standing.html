@@ -12,16 +12,23 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Standing materials and the site's jurisdictional flow visualization.">
+    <meta name="description" content="See what the trust and standing diagram claims, what each connection means, and what this page does not establish. Educational only, not legal advice.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://statenationalistreform.com/standing.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Standing | State Nationalist Reform">
-    <meta property="og:description" content="Standing materials and the site's jurisdictional flow visualization.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="State Nationalist Reform">
+    <meta property="og:title" content="Trusts, Standing &amp; Relationships | State Nationalist Reform">
+    <meta property="og:description" content="See what the trust and standing diagram claims, what each connection means, and what this page does not establish. Educational only, not legal advice.">
     <meta property="og:url" content="https://statenationalistreform.com/standing.html">
-    <title>Standing | State Nationalist Reform</title>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Trusts, Standing &amp; Relationships | State Nationalist Reform">
+    <meta name="twitter:description" content="See what the trust and standing diagram claims, what each connection means, and what this page does not establish. Educational only, not legal advice.">
+    <title>Trusts, Standing &amp; Relationships | State Nationalist Reform</title>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://statenationalistreform.com/#organization","name":"State Nationalist Reform","url":"https://statenationalistreform.com/"},{"@type":"WebSite","@id":"https://statenationalistreform.com/#website","name":"State Nationalist Reform","url":"https://statenationalistreform.com/","publisher":{"@id":"https://statenationalistreform.com/#organization"}},{"@type":"WebPage","@id":"https://statenationalistreform.com/standing.html#webpage","url":"https://statenationalistreform.com/standing.html","name":"Trusts, Standing & Relationships | State Nationalist Reform","description":"See what the trust and standing diagram claims, what each connection means, and what this page does not establish. Educational only, not legal advice.","isPartOf":{"@id":"https://statenationalistreform.com/#website"}}]}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <link rel="stylesheet" href="site.css">
 </head>
 <body class="overflow-hidden h-screen flex flex-col">
@@ -49,25 +56,48 @@
     <main class="flex-1 overflow-y-auto bg-slate-50" id="main-content">
 <section id="standing" class="fade-in p-8 md:p-12">
             <div class="max-w-7xl mx-auto bg-white p-8 border border-slate-200 shadow-sm text-center">
-                <h1 class="text-5xl font-black mb-4 uppercase">The Jurisdictional <span class="text-red-700">Shield</span></h1>
-                <p class="text-slate-500 uppercase text-xs tracking-[0.4em] mb-12">Visualizing the Operational Separation of Assets</p>
+                <h1 class="text-5xl font-black mb-4 uppercase">Trust &amp; <span class="text-red-700">Standing</span>: The Original Claim, Explained</h1>
+                <p class="text-slate-500 uppercase text-xs tracking-[0.4em] mb-12">A step-by-step reading of the site's asset-flow diagram</p>
                 
-                <div class="bg-slate-50 p-6 md:p-12 border border-slate-200 shadow-inner overflow-x-auto">
-                    <h3 class="text-2xl font-black mb-8 uppercase text-slate-400 tracking-tighter">Asset Flow: From Public Liability to Private Authority</h3>
-                    <div id="standingSankey" class="w-full min-w-[600px] h-[500px]"></div>
+                <div class="standing-map-shell bg-slate-50 p-5 md:p-10 border border-slate-200 shadow-inner">
+                    <div class="standing-map-heading">
+                        <div>
+                            <p class="standing-map-kicker">Source graphic explained</p>
+                            <h2 class="text-2xl md:text-3xl font-black uppercase text-slate-500 tracking-tighter">What the Diagram Claims</h2>
+                        </div>
+                        <p class="standing-map-instruction">Select a stage to inspect the claim and what this page establishes.</p>
+                    </div>
+                    <div id="standingSankey" class="standing-map" role="group" aria-label="Interactive explanation of the original asset-flow diagram"></div>
+                    <div class="standing-map-caption">
+                        <span class="standing-map-key" aria-hidden="true"></span>
+                        <p><strong>How to read it:</strong> Dashed arrows restate connections asserted by the original graphic. They are not evidence of causation, asset movement, or a legal outcome.</p>
+                    </div>
+                    <aside id="standingNodeDetail" class="standing-node-detail" aria-live="polite" aria-atomic="true">
+                        <span class="standing-detail-label">Whole-graphic reading</span>
+                        <div class="standing-detail-grid">
+                            <div>
+                                <strong>The claim represented</strong>
+                                <p data-detail="claim">The original graphic depicts a path from public institutions through a claimed liability nexus and protocol to private equity and protected assets.</p>
+                            </div>
+                            <div>
+                                <strong>What this page establishes</strong>
+                                <p data-detail="evidence">This page does not cite authority or provide transaction documents establishing that path as a legal result.</p>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-left">
                     <div class="bg-red-50 p-6 border-l-4 border-red-700">
-                        <h4 class="text-red-700 font-black uppercase mb-2">Vulnerable (Public)</h4>
+                        <h4 class="text-red-700 font-black uppercase mb-2">Public-Side Claim in the Page</h4>
                         <p class="text-xs text-slate-600 uppercase font-bold leading-relaxed">
-                            Under statutory jurisdiction, courts treat you as a "vessel" of the state. Your property is collateral for the national debt, making it accessible to judicial liens, probate seizures, and administrative levies.
+                            The page describes public status as exposing property to liens, probate claims, and levies. It does not cite authority for a universal rule; actual exposure depends on applicable law and the facts.
                         </p>
                     </div>
                     <div class="bg-slate-900 p-6 border-l-4 border-red-700 text-white">
-                        <h4 class="text-red-500 font-black uppercase mb-2">Protected (Trust)</h4>
+                        <h4 class="text-red-500 font-black uppercase mb-2">Trust-Side Claim in the Page</h4>
                         <p class="text-xs text-slate-300 uppercase font-bold leading-relaxed">
-                            By placing equity in a 98-series protocol, you sever the legal nexus to the public person. Courts cannot "see" or "touch" what is held in a private capacity.
+                            The page describes its 98-series protocol as severing that connection. This page does not establish that a trust or private-capacity label places assets beyond courts or creditors.
                         </p>
                     </div>
                 </div>
