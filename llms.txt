@@ -1,11 +1,18 @@
 # State Nationalist Reform
 
-> Public website with separate Home, Mission, Funding/Trust, Standing, and Vault pages.
+> Public website for State Nationalist Reform, organized into five separate, indexable pages on https://statenationalistreform.com/.
 
 ## Pages
 
-- [Home](https://statenationalistreform.com/): Strategic briefing and links to the site's main sections.
-- [Mission](https://statenationalistreform.com/mission.html): Strategic initiative overview.
+- [Home](https://statenationalistreform.com/): Strategic briefing and navigation to the site's main sections.
+- [Mission](https://statenationalistreform.com/mission.html): Mission and strategic initiatives.
 - [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Funding materials and asset-distribution visualization.
-- [Standing](https://statenationalistreform.com/standing.html): Standing materials and jurisdictional flow visualization.
-- [Vault](https://statenationalistreform.com/vault.html): Vault resources and an optional direct USDC transfer on Base; transfers are not verified or used to unlock content.
+- [Standing](https://statenationalistreform.com/standing.html): Standing information and jurisdictional-flow visualization.
+- [Vault](https://statenationalistreform.com/vault.html): Vault resource listings and optional direct USDC transfer on Base.
+
+## Payment behavior
+
+- The Vault displays an optional direct transfer of USDC on Base.
+- No fixed amount is listed, and payment is not required to browse.
+- The website does not verify transfers or unlock content based on payment.
+- x402 is not enabled; the transfer card is not a checkout or paywall.
