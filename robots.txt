@@ -1,4 +1,4 @@
-# State Nationalist Reform
+# State Nationalist Reform public pages are open to crawling.
 User-agent: *
 Allow: /
 

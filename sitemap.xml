@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://statenationalistreform.com/</loc><lastmod>2026-10-12</lastmod><priority>1.0</priority></url>
-  <url><loc>https://statenationalistreform.com/mission.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://statenationalistreform.com/funding-trust.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://statenationalistreform.com/standing.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://statenationalistreform.com/vault.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://statenationalistreform.com/</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://statenationalistreform.com/mission.html</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://statenationalistreform.com/funding-trust.html</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://statenationalistreform.com/standing.html</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://statenationalistreform.com/vault.html</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
 </urlset>

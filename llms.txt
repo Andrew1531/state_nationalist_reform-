@@ -1,13 +1,16 @@
 # State Nationalist Reform
 
-> Public website for State Nationalist Reform, organized into five separate, indexable pages on https://statenationalistreform.com/. The site shares educational trust-related materials and is not a legal service provider.
+> Public educational information about trusts, trust funding and administration, the organization's mission, and the claims represented in its standing diagram. State Nationalist Reform is not a law firm and does not provide legal advice.
 
 ## Pages
 
-- [Home](https://statenationalistreform.com/): Trust information, educational resources, and links to the site's main sections.
-- [Mission](https://statenationalistreform.com/mission.html): Trust stewardship mission and strategic initiatives.
-- [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Trust funding materials and an asset-distribution illustration.
-- [Standing](https://statenationalistreform.com/standing.html): Standing materials and a conceptual relationship diagram; the diagram is not quantitative or legal advice.
-- [Vault](https://statenationalistreform.com/vault.html): Trust administration resource descriptions.
+- [Home](https://statenationalistreform.com/): Organization overview and links to the site's public trust-related materials.
+- [Mission](https://statenationalistreform.com/mission.html): The organization's stated trust stewardship mission, principles, and initiatives.
+- [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Trust funding information and an asset-distribution illustration; educational content, not legal or tax advice.
+- [Standing](https://statenationalistreform.com/standing.html): An interactive explanation of the site's asset-flow diagram, including the Federal Reserve System, state courts, the claimed “Public Nexus,” and the National Reform Protocol's stated objective. The diagram's relationships are claims, not established legal outcomes.
+- [Vault](https://statenationalistreform.com/vault.html): Descriptions of trust-administration resources.
 
-State Nationalist Reform does not provide legal services or legal advice. Consult a qualified attorney about your circumstances. No payment method or resource-gating checkout is currently offered on the site.
+## Important context
+
+- Statements about trust structures and keeping government or creditors from reaching assets describe the site's proposed framework or intended goals; they are not guarantees of legal protection.
+- The Standing page distinguishes the diagram's claims from what the page establishes. Consult a qualified attorney about your circumstances.
