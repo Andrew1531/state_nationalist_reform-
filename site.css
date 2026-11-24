@@ -220,3 +220,5 @@ td a{color:var(--red);font-weight:700}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .main-nav a.btn{color:#fff;padding:.75em 1.15em;border:2px solid var(--red);letter-spacing:.12em}
 .main-nav a.btn:hover{background:var(--red-dark)}
+.h3{font-size:1.45rem}
+.footer-title{font:400 1.1rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;margin:0 0 14px}

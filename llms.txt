@@ -4,7 +4,7 @@
 
 ## Pages
 
-- [Home](https://statenationalistreform.com/): Organization overview and links to the site's public trust-related materials.
+- [Home](https://statenationalistreform.com/): Overview of State Nationalist Reform, its featured video, and links to the mission, funding, standing and resources pages.
 - [Mission](https://statenationalistreform.com/mission.html): The organization's stated trust stewardship mission, principles, and initiatives.
 - [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Trust funding information and an asset-distribution illustration; educational content, not legal or tax advice.
 - [Standing](https://statenationalistreform.com/standing.html): An interactive explanation of the site's asset-flow diagram, including the Federal Reserve System, state courts, the claimed “Public Nexus,” and the National Reform Protocol's stated objective. The diagram's relationships are claims, not established legal outcomes.
