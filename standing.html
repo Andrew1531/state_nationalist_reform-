@@ -30,213 +30,107 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://statenationalistreform.com/#organization","name":"State Nationalist Reform","url":"https://statenationalistreform.com/"},{"@type":"WebSite","@id":"https://statenationalistreform.com/#website","name":"State Nationalist Reform","url":"https://statenationalistreform.com/","publisher":{"@id":"https://statenationalistreform.com/#organization"}},{"@type":"WebPage","@id":"https://statenationalistreform.com/standing.html#webpage","url":"https://statenationalistreform.com/standing.html","name":"Trusts, Standing & Relationships | State Nationalist Reform","description":"See what the trust and standing diagram claims, what each connection means, and what this page does not establish. Educational only, not legal advice.","isPartOf":{"@id":"https://statenationalistreform.com/#website"}}]}
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        snrRed: '#dc2626',
-                        snrRedDark: '#b91c1c',
-                        snrNavy: '#0a0f1d',
-                        snrNavyLight: '#151d30',
-                        snrBg: '#f0f3f7',
-                        snrTextDark: '#0f172a'
-                    },
-                    fontFamily: {
-                        condensed: ['Barlow Condensed', 'Oswald', 'sans-serif'],
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #f0f3f7; color: #0f172a; }
-        .font-condensed { font-family: 'Barlow Condensed', 'Oswald', sans-serif; }
-        .snr-card { background: #fff; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
-        .stage-box-selected { border-color: #dc2626 !important; box-shadow: 0 0 0 2px rgba(220,38,38,.2), 0 4px 12px rgba(0,0,0,.1) !important; background: #fef2f2 !important; }
-        .animated-dashed-line { stroke-dasharray: 6 4; animation: dashMove 1s linear infinite; }
-        @keyframes dashMove { to { stroke-dashoffset: -20; } }
-        .tab-active { border-bottom: 2px solid #dc2626; color: #dc2626; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
-        .stage-control { cursor: pointer; }
-        .stage-control:focus-visible { outline: 3px solid rgba(185,28,28,.65); outline-offset: 3px; }
-        .diagram-stage.is-selected rect { stroke: #dc2626; stroke-width: 4; }
-        @media (prefers-reduced-motion: reduce) { .animated-dashed-line { animation: none; } }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600;700;800&amp;display=swap">
     <link rel="stylesheet" href="site.css">
-</head>
-<body class="min-h-screen flex flex-col selection:bg-snrRed selection:text-white">
-    <div class="bg-red-700 text-white text-[10px] font-bold tracking-[0.4em] py-2 text-center uppercase shrink-0">Restoring the Republic • Private National Interest • Authorized Personnel Only</div>
-    <nav class="sticky top-0 bg-slate-900 text-white px-4 md:px-6 py-3 md:py-4 flex flex-wrap md:flex-nowrap justify-between items-center shadow-2xl z-40 shrink-0 gap-x-4 gap-y-2" aria-label="Main navigation">
-        <div class="flex items-center gap-3 md:gap-4 shrink-0">
-            <a href="index.html" aria-label="State Nationalist Reform home" class="bg-red-700 p-2 font-black text-xl italic tracking-tighter">SNR</a>
-            <a href="index.html" class="hidden md:block text-white no-underline">
-                <span class="text-xl leading-none block">State Nationalist Reform</span>
-                <span class="text-[9px] uppercase tracking-widest text-red-500 font-bold">Strategic Operations</span>
-            </a>
-        </div>
-        <div class="order-3 md:order-none w-full md:w-auto flex justify-start gap-1 md:gap-2 overflow-x-auto no-scrollbar">
-                <a id="nav-home" href="index.html" class="nav-item px-2 md:px-4 py-2 text-[10px] md:text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Home</a>
-                <a id="nav-mission" href="mission.html" class="nav-item px-2 md:px-4 py-2 text-[10px] md:text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Mission</a>
-                <a id="nav-funding" href="funding-trust.html" class="nav-item px-2 md:px-4 py-2 text-[10px] md:text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Funding/Trust</a>
-                <a id="nav-standing" href="standing.html" class="nav-item active-nav px-2 md:px-4 py-2 text-[10px] md:text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500" aria-current="page">Standing</a>
-                <a id="nav-vault" href="vault.html" class="nav-item px-2 md:px-4 py-2 text-[10px] md:text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Vault</a>
-        </div>
-        <button type="button" class="hidden lg:flex items-center gap-3 border-l border-slate-700 pl-6" onclick="switchView('tab-portal'); window.setTimeout(scrollToContact, 60)">
-            <span class="w-3 h-3 bg-red-600 rounded-full live-indicator" aria-hidden="true"></span>
-            <span class="text-[10px] font-black uppercase tracking-widest">Live: Ops Room</span>
-        </button>
-    </nav>
-    <main class="flex-1 bg-slate-50 w-full" id="main-content">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8">
-            <header class="text-center space-y-2 border-b border-slate-300 pb-8">
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-condensed tracking-tight text-snrTextDark uppercase leading-none">TRUST &amp; <span class="text-snrRed">STANDING</span>: THE ORIGINAL CLAIM, EXPLAINED</h1>
-                <p class="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-widest max-w-3xl mx-auto pt-1">A STEP-BY-STEP READING OF THE SITE'S ASSET-FLOW DIAGRAM</p>
-            </header>
-            <div class="flex justify-center border-b border-slate-300 overflow-x-auto" role="tablist" aria-label="Standing page sections">
-                <div class="flex min-w-max space-x-1 sm:space-x-2 font-mono text-[10px] sm:text-xs font-bold uppercase">
-                    <button type="button" role="tab" id="tab-btn-diagram" aria-controls="tab-diagram" aria-selected="true" onclick="switchView('tab-diagram')" class="tab-active px-3 sm:px-6 py-2.5"><i class="fa-solid fa-diagram-project mr-1.5" aria-hidden="true"></i><span class="hidden sm:inline">Interactive Diagram Analysis</span><span class="sm:hidden">Diagram</span></button>
-                    <button type="button" role="tab" id="tab-btn-reading" aria-controls="tab-reading" aria-selected="false" tabindex="-1" onclick="switchView('tab-reading')" class="px-3 sm:px-6 py-2.5 text-slate-600 hover:text-slate-900"><i class="fa-solid fa-file-contract mr-1.5" aria-hidden="true"></i><span class="hidden sm:inline">Whole-Graphic Reading</span><span class="sm:hidden">Reading</span></button>
-                    <button type="button" role="tab" id="tab-btn-portal" aria-controls="tab-portal" aria-selected="false" tabindex="-1" onclick="switchView('tab-portal')" class="px-3 sm:px-6 py-2.5 text-slate-600 hover:text-slate-900"><i class="fa-solid fa-paper-plane mr-1.5" aria-hidden="true"></i><span class="hidden sm:inline">Submit Inquiry</span><span class="sm:hidden">Inquiry</span></button>
-                </div>
+</head><body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="utility">★ Restoring the Republic · Educational information only ★</div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="State Nationalist Reform home"><span class="brand-mark">SNR</span><span class="brand-name">State Nationalist Reform</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="mission.html">Mission</a>
+          <a href="funding-trust.html">Funding &amp; Trust</a>
+          <a href="standing.html" aria-current="page">Standing</a>
+          <a href="vault.html">Resources</a>
+          <a class="btn btn-sm" href="#contact">Get involved</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <div class="crumbs"><a href="index.html">Home</a> / Standing</div>
+        <h1>Trust &amp; Standing: <span style="color:var(--red)">the diagram, explained</span></h1>
+        <p class="lead">A step-by-step reading of the site's asset-flow diagram — what each stage claims, and what is actually established.</p>
+      </div>
+    </section>
+    <section class="section" id="diagram" aria-labelledby="diagram-title">
+      <div class="wrap">
+        <nav class="tabs" aria-label="On this page"><a class="is-active" href="#diagram">Diagram</a><a href="#reading">Full reading</a><a href="#contact">Ask</a></nav>
+        <div class="section-head"><span class="eyebrow">Source graphic explained</span><h2 id="diagram-title">What the diagram claims</h2><p class="lead">Select a stage to see the claim and its limits.</p></div>
+        <div class="flow-layout">
+          <ol class="flow-list" id="flowList" aria-label="Diagram stages"></ol>
+          <div>
+            <div class="inspector" id="inspector" aria-live="polite">
+              <span class="chip chip-red" data-kind></span>
+              <h3 data-title></h3>
+              <div class="inspector-cols">
+                <div class="inspector-col"><span class="eyebrow">What the diagram claims</span><p data-claim></p></div>
+                <div class="inspector-col est"><span class="eyebrow">What is established</span><p data-evidence></p></div>
+              </div>
+              <div class="inspector-nav"><button class="btn btn-outline btn-sm" type="button" data-prev>← Previous</button><span class="status" style="align-self:center" data-pos></span><button class="btn btn-outline btn-sm" type="button" data-next>Next →</button></div>
             </div>
-            <section id="tab-diagram" class="tab-content space-y-8" role="tabpanel" aria-labelledby="tab-btn-diagram">
-                <div class="snr-card overflow-hidden">
-                    <div class="bg-snrNavy text-white px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-                        <div><span class="text-[10px] font-mono font-bold text-snrRed uppercase tracking-wider block">SOURCE GRAPHIC EXPLAINED</span><h2 class="text-xl font-bold font-condensed uppercase tracking-wider">WHAT THE DIAGRAM CLAIMS</h2></div>
-                        <div class="text-[11px] font-mono text-slate-300 uppercase tracking-tight bg-slate-800/80 px-3 py-1.5 border border-slate-700"><i class="fa-solid fa-hand-pointer text-snrRed mr-1.5" aria-hidden="true"></i>Select a stage to inspect the claim and its limits.</div>
-                    </div>
-                    <div class="p-4 sm:p-6 bg-slate-50 border-b border-slate-200 overflow-x-auto" tabindex="0" aria-label="Scrollable asset-flow diagram">
-                        <p class="sm:hidden mb-3 text-[10px] font-mono uppercase tracking-wide text-slate-500">Swipe horizontally to view the full diagram.</p>
-                        <svg id="flow-svg-diagram" viewBox="0 0 1100 360" class="w-full min-w-[900px] h-auto select-none" role="group" aria-label="Interactive explanation of the original asset-flow diagram">
-                            <defs><marker id="arrow-claim-head" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"></path></marker></defs>
-                            <path d="M 180 80 L 350 180" stroke="#64748b" stroke-width="2" class="animated-dashed-line" marker-end="url(#arrow-claim-head)"></path>
-                            <path d="M 180 280 L 350 180" stroke="#64748b" stroke-width="2" class="animated-dashed-line" marker-end="url(#arrow-claim-head)"></path>
-                            <path d="M 500 180 L 590 180" stroke="#64748b" stroke-width="2" class="animated-dashed-line" marker-end="url(#arrow-claim-head)"></path>
-                            <path d="M 740 180 L 820 180" stroke="#64748b" stroke-width="2" class="animated-dashed-line" marker-end="url(#arrow-claim-head)"></path>
-                            <path d="M 950 180 L 1000 180" stroke="#64748b" stroke-width="2" class="animated-dashed-line" marker-end="url(#arrow-claim-head)"></path>
-                            <g id="svg-fed-reserves" class="diagram-stage stage-control" data-stage="fed-reserves" tabindex="0" role="button" aria-pressed="false" aria-label="Federal Reserves, starting label"><rect x="20" y="45" width="160" height="70" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"></rect><line x1="20" y1="45" x2="20" y2="115" stroke="#0f172a" stroke-width="8"></line><text x="32" y="66" fill="#64748b" font-size="9" font-weight="700">STARTING LABEL</text><text x="32" y="89" fill="#0f172a" font-size="15" font-weight="900">FEDERAL RESERVES</text></g>
-                            <g id="svg-state-courts" class="diagram-stage stage-control" data-stage="state-courts" tabindex="0" role="button" aria-pressed="false" aria-label="State Courts, starting label"><rect x="20" y="245" width="160" height="70" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"></rect><line x1="20" y1="245" x2="20" y2="315" stroke="#0f172a" stroke-width="8"></line><text x="32" y="266" fill="#64748b" font-size="9" font-weight="700">STARTING LABEL</text><text x="32" y="289" fill="#0f172a" font-size="15" font-weight="900">STATE COURTS</text></g>
-                            <g id="svg-public-nexus" class="diagram-stage stage-control" data-stage="public-nexus" tabindex="0" role="button" aria-pressed="false" aria-label="Public Nexus, claimed connection"><rect x="350" y="135" width="150" height="90" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"></rect><line x1="350" y1="135" x2="350" y2="225" stroke="#0f172a" stroke-width="8"></line><text x="362" y="158" fill="#64748b" font-size="9" font-weight="700">CLAIMED CONNECTION</text><text x="362" y="181" fill="#0f172a" font-size="15" font-weight="900">PUBLIC NEXUS</text><text x="362" y="201" fill="#dc2626" font-size="13" font-weight="900">(LIABILITY)</text></g>
-                            <g id="svg-national-protocol" class="diagram-stage stage-control" data-stage="national-protocol" tabindex="0" role="button" aria-pressed="false" aria-label="National Reform Protocol, proposed method"><rect x="590" y="135" width="150" height="90" rx="2" fill="#0a0f1d" stroke="#dc2626" stroke-width="2"></rect><line x1="590" y1="135" x2="590" y2="225" stroke="#dc2626" stroke-width="8"></line><text x="602" y="158" fill="#dc2626" font-size="9" font-weight="700">PROPOSED METHOD</text><text x="602" y="182" fill="#fff" font-size="13" font-weight="900">NATIONAL REFORM</text><text x="602" y="202" fill="#fff" font-size="13" font-weight="900">PROTOCOL</text></g>
-                            <g id="svg-private-equity" class="diagram-stage stage-control" data-stage="private-equity" tabindex="0" role="button" aria-pressed="false" aria-label="Private Equity, asset step"><rect x="820" y="145" width="130" height="70" rx="2" fill="#fff" stroke="#0f172a" stroke-width="2"></rect><line x1="820" y1="145" x2="820" y2="215" stroke="#0f172a" stroke-width="8"></line><text x="832" y="166" fill="#64748b" font-size="9" font-weight="700">ASSET STEP</text><text x="832" y="190" fill="#0f172a" font-size="14" font-weight="900">PRIVATE EQUITY</text></g>
-                            <g id="svg-protected-assets" class="diagram-stage stage-control" data-stage="protected-assets" tabindex="0" role="button" aria-pressed="false" aria-label="Protected Assets, intended outcome"><rect x="1000" y="145" width="90" height="70" rx="2" fill="#dc2626" stroke="#b91c1c" stroke-width="2"></rect><text x="1045" y="173" fill="#fff" font-size="11" font-weight="900" text-anchor="middle">PROTECTED</text><text x="1045" y="190" fill="#fff" font-size="11" font-weight="900" text-anchor="middle">ASSETS</text><text x="1045" y="205" fill="#fef2f2" font-size="8" font-weight="700" text-anchor="middle">GOAL</text></g>
-                        </svg>
-                    </div>
-                    <div class="p-4 bg-slate-100 text-slate-700 text-xs font-mono border-t border-slate-200 flex items-start gap-2.5"><i class="fa-solid fa-circle-info text-snrRed mt-0.5" aria-hidden="true"></i><p><strong class="text-snrTextDark">How to read it:</strong> Dashed arrows restate links asserted by the source graphic. They are not evidence of causation, asset movement, or a legal outcome.</p></div>
-                </div>
-                <div class="snr-card p-4 sm:p-6 space-y-4">
-                    <div class="bg-slate-200/80 px-3 py-2 text-xs font-bold font-mono text-slate-800 uppercase tracking-wider border-l-4 border-slate-800">Starting labels and definitions</div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <button id="card-fed-reserves" type="button" data-stage="fed-reserves" aria-pressed="false" class="stage-control text-left p-4 bg-white border border-slate-200 border-l-4 border-l-slate-900 space-y-1.5"><span class="block text-[10px] font-mono font-bold text-slate-500 uppercase">Definition</span><span class="block text-lg font-black font-condensed text-snrTextDark uppercase">Federal Reserves</span><span class="block text-xs text-slate-600 leading-relaxed">The Federal Reserve System is the U.S. central bank. It conducts monetary policy and supervises and regulates banks; the diagram gives no basis for linking those functions to a specific asset or legal claim.</span></button>
-                        <button id="card-state-courts" type="button" data-stage="state-courts" aria-pressed="false" class="stage-control text-left p-4 bg-white border border-slate-200 border-l-4 border-l-slate-900 space-y-1.5"><span class="block text-[10px] font-mono font-bold text-slate-500 uppercase">Definition</span><span class="block text-lg font-black font-condensed text-snrTextDark uppercase">State Courts</span><span class="block text-xs text-slate-600 leading-relaxed">State courts are established by each state's constitution and laws. Their structure and the types of cases they hear vary; the diagram cites no case or ruling supporting its liability link.</span></button>
-                    </div>
-                </div>
-                <div class="text-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">⋮ The original graphic asserts a connection ⋮</div>
-                <button id="card-public-nexus" type="button" data-stage="public-nexus" aria-pressed="false" class="stage-control snr-card w-full text-left p-4 sm:p-6 border-l-4 border-l-slate-900 space-y-1.5"><span class="block text-[10px] font-mono font-bold text-slate-500 uppercase">Claimed connection</span><span class="block text-xl font-black font-condensed text-snrTextDark uppercase">Public Nexus (Liability)</span><span class="block text-xs text-slate-600 leading-relaxed max-w-3xl">Here, “public nexus” means the diagram’s claimed connection between public institutions and legal responsibility. No law, case, or facts are cited to establish that connection or liability.</span></button>
-                <div class="text-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">⋮ The page presents a proposed response ⋮</div>
-                <button id="card-national-protocol" type="button" data-stage="national-protocol" aria-pressed="false" class="stage-control snr-card w-full text-left p-4 sm:p-6 bg-snrNavy text-white border-l-4 border-l-snrRed space-y-1.5"><span class="block text-[10px] font-mono font-bold text-snrRed uppercase">Proposed method</span><span class="block text-xl font-black font-condensed uppercase">National Reform Protocol</span><span class="block text-xs text-slate-300 leading-relaxed max-w-3xl">Presented as a way to keep the government from reaching or controlling your assets. This is a stated goal, not a proven result; legal effect depends on applicable law and the facts.</span></button>
-                <div class="text-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">↓ The graphic depicts an asset path ↓</div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button id="card-private-equity" type="button" data-stage="private-equity" aria-pressed="false" class="stage-control snr-card text-left p-4 sm:p-6 border-l-4 border-l-slate-900 space-y-1.5"><span class="block text-[10px] font-mono font-bold text-slate-500 uppercase">Asset step</span><span class="block text-lg font-black font-condensed text-snrTextDark uppercase">Private Equity</span><span class="block text-xs text-slate-600 leading-relaxed">Shown as the asset-holding stage; actual title and control depend on documents and applicable law.</span></button>
-                    <button id="card-protected-assets" type="button" data-stage="protected-assets" aria-pressed="false" class="stage-control snr-card text-left p-4 sm:p-6 border-l-4 border-l-snrRed bg-red-50/50 space-y-1.5"><span class="block text-[10px] font-mono font-bold text-snrRed uppercase">Intended outcome</span><span class="block text-lg font-black font-condensed text-snrTextDark uppercase">Protected Assets</span><span class="block text-xs text-slate-600 leading-relaxed">This is the stated goal in the graphic, not a result it proves or guarantees.</span></button>
-                </div>
-                <div class="text-center"><button type="button" onclick="switchView('tab-portal'); window.setTimeout(scrollToContact, 60)" class="bg-snrRed hover:bg-snrRedDark text-white px-8 sm:px-12 py-4 font-condensed text-lg font-extrabold uppercase tracking-wider transition shadow-md">Submit an Inquiry</button></div>
-            </section>
-            <section id="tab-reading" class="tab-content hidden space-y-6" role="tabpanel" aria-labelledby="tab-btn-reading" hidden>
-                <div class="snr-card p-6 sm:p-8 space-y-6">
-                    <header class="border-b border-slate-200 pb-4"><span class="text-xs font-mono font-bold text-snrRed uppercase tracking-wider">Evaluation protocol</span><h2 class="text-3xl font-black font-condensed text-snrTextDark uppercase tracking-tight mt-1">Whole-Graphic Reading</h2><p class="text-xs font-mono text-slate-500 mt-1">Comparing the source graphic’s claims with what this page actually establishes.</p></header>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <article class="p-5 bg-slate-50 border border-slate-200 border-l-4 border-l-slate-800 space-y-2"><h3 class="text-xs font-mono font-bold uppercase tracking-wider"><i class="fa-solid fa-diagram-project mr-2" aria-hidden="true"></i>The Claim Represented</h3><p class="text-xs text-slate-700 leading-relaxed">The original graphic depicts a path from public institutions through a claimed liability nexus and protocol to private equity and protected assets.</p></article>
-                        <article class="p-5 bg-slate-50 border border-slate-200 border-l-4 border-l-snrRed space-y-2"><h3 class="text-xs font-mono font-bold uppercase tracking-wider text-snrRed"><i class="fa-solid fa-scale-balanced mr-2" aria-hidden="true"></i>What This Page Establishes</h3><p class="text-xs text-slate-700 leading-relaxed">This page does not cite authority or provide transaction documents establishing that path as a legal result.</p></article>
-                        <article class="p-5 bg-slate-50 border border-slate-200 border-l-4 border-l-slate-800 space-y-2"><h3 class="text-xs font-mono font-bold uppercase tracking-wider"><i class="fa-solid fa-building-columns mr-2" aria-hidden="true"></i>Public-Side Claim</h3><p class="text-xs text-slate-700 leading-relaxed">The page describes public status as exposing property to liens, probate claims, and levies. It does not cite authority for a universal rule; actual exposure depends on applicable law and the facts.</p></article>
-                        <article class="p-5 bg-slate-50 border border-slate-200 border-l-4 border-l-snrRed space-y-2"><h3 class="text-xs font-mono font-bold uppercase tracking-wider text-snrRed"><i class="fa-solid fa-shield-halved mr-2" aria-hidden="true"></i>Trust-Side Claim</h3><p class="text-xs text-slate-700 leading-relaxed">The National Reform Protocol is presented as a way to keep the government from reaching or controlling your assets. That is a stated aim, not a proven result or guarantee; legal effect depends on applicable law and the facts.</p></article>
-                    </div>
-                    <div class="pt-4 border-t border-slate-200 space-y-3"><h3 class="text-sm font-mono font-bold text-snrTextDark uppercase">Structural Analysis Breakdown</h3>
-                        <div class="overflow-x-auto"><table class="w-full min-w-[720px] text-left text-xs font-mono border border-slate-200"><thead class="bg-snrNavy text-white uppercase text-[11px]"><tr><th class="px-4 py-3 border-b">Stage Label</th><th class="px-4 py-3 border-b">Classification</th><th class="px-4 py-3 border-b">Asserted Graphic Claim</th><th class="px-4 py-3 border-b">What Is Established</th></tr></thead><tbody class="divide-y divide-slate-200 bg-white text-slate-700">
-                            <tr><td class="px-4 py-3 font-bold text-snrNavy">Federal Reserves</td><td class="px-4 py-3">Starting label</td><td class="px-4 py-3">Shown as a source in the flow</td><td class="px-4 py-3 text-slate-500">The Federal Reserve System is the U.S. central bank; the diagram identifies no specific asset or legal claim. <a href="https://www.federalreserve.gov/aboutthefed.htm" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline">Federal Reserve source</a></td></tr>
-                            <tr><td class="px-4 py-3 font-bold text-snrNavy">State Courts</td><td class="px-4 py-3">Starting label</td><td class="px-4 py-3">Shown as connected to liability</td><td class="px-4 py-3 text-slate-500">Established by state constitutions and laws; court structures and types of cases vary. No supporting case is cited. <a href="https://www.uscourts.gov/about-federal-courts/court-role-and-structure/comparing-federal-state-courts" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline">U.S. Courts source</a></td></tr>
-                            <tr><td class="px-4 py-3 font-bold text-snrNavy">Public Nexus</td><td class="px-4 py-3">Claimed connection</td><td class="px-4 py-3">Claims a public-institution link to liability</td><td class="px-4 py-3 text-slate-500">The graphic cites no law, case, or facts establishing the link or liability.</td></tr>
-                            <tr><td class="px-4 py-3 font-bold text-snrNavy">National Reform Protocol</td><td class="px-4 py-3">Proposed method</td><td class="px-4 py-3">Intended to keep government from reaching or controlling assets</td><td class="px-4 py-3 text-slate-500">Stated aim, not a proven outcome or guarantee; effect depends on applicable law and facts.</td></tr>
-                            <tr><td class="px-4 py-3 font-bold text-snrNavy">Private Equity</td><td class="px-4 py-3">Asset step</td><td class="px-4 py-3">Asset-holding stage</td><td class="px-4 py-3 text-slate-500">Title depends on instruments and applicable law.</td></tr>
-                            <tr><td class="px-4 py-3 font-bold text-snrNavy">Protected Assets</td><td class="px-4 py-3">Intended outcome</td><td class="px-4 py-3">Complete asset insulation</td><td class="px-4 py-3 text-slate-500">Stated goal—not a guaranteed result.</td></tr>
-                        </tbody></table></div>
-                    </div>
-                </div>
-            </section>
-            <section id="tab-portal" class="tab-content hidden space-y-6" role="tabpanel" aria-labelledby="tab-btn-portal" hidden>
-                <div id="contact-form-section" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    <div class="lg:col-span-5 snr-card p-6 sm:p-8 bg-snrNavy text-white border-l-4 border-l-snrRed space-y-5">
-                        <div><span class="text-xs font-mono font-bold text-snrRed uppercase tracking-widest">Contact State Nationalist Reform</span><h2 class="text-3xl font-black font-condensed uppercase tracking-tight mt-1">Submit an Inquiry</h2><p class="text-xs text-slate-300 mt-2 leading-relaxed">Use this form for questions about the topics on this page. The message is sent to the site’s inquiry inbox; do not include sensitive legal, financial, or identity details.</p></div>
-                        <div class="space-y-3 text-xs font-mono text-slate-300"><div class="p-3.5 bg-snrNavyLight border border-slate-700"><i class="fa-solid fa-envelope text-snrRed mr-2" aria-hidden="true"></i>Inquiry by email</div><div class="p-3.5 bg-snrNavyLight border border-slate-700"><i class="fa-solid fa-circle-info text-snrRed mr-2" aria-hidden="true"></i>This form is not a secure document-upload channel.</div></div>
-                        <p class="pt-4 border-t border-slate-800 text-[10px] text-slate-400 font-mono">State Nationalist Reform is not a legal service provider. This site does not provide legal advice.</p>
-                    </div>
-                    <div class="lg:col-span-7 snr-card p-6 sm:p-8 space-y-6"><div class="border-b border-slate-200 pb-3"><h3 class="text-xl font-black font-condensed text-snrTextDark uppercase">Send a Question</h3><p class="text-xs text-slate-500 font-mono">Required fields are marked with an asterisk.</p></div>
-                        <form action="https://formsubmit.co/SNR_2026@proton.me" method="POST" class="space-y-4">
-                            <input type="hidden" name="_subject" value="New Strategic Operational Enquiry"><input type="hidden" name="_captcha" value="false">
-                            <label class="block text-xs font-mono font-bold text-slate-700 uppercase">Full name *<input type="text" name="name" required autocomplete="name" class="mt-1 w-full bg-slate-50 border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-snrRed"></label>
-                            <label class="block text-xs font-mono font-bold text-slate-700 uppercase">Email *<input type="email" name="email" required autocomplete="email" class="mt-1 w-full bg-slate-50 border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-snrRed"></label>
-                            <label class="block text-xs font-mono font-bold text-slate-700 uppercase">Inquiry type<select name="inquiry_type" class="mt-1 w-full bg-slate-50 border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-snrRed"><option value="98-Series Protocol">98-Series Protocol Inquiry</option><option value="Jurisdictional Standing">Jurisdictional Standing</option><option value="Private Equity Path">Private Equity Asset Path</option><option value="General Strategic Question">General Strategic Question</option></select></label>
-                            <label class="block text-xs font-mono font-bold text-slate-700 uppercase">Your question *<textarea name="message" rows="4" required class="mt-1 w-full bg-slate-50 border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-snrRed"></textarea></label>
-                            <button type="submit" class="w-full bg-snrRed hover:bg-snrRedDark text-white font-condensed text-lg font-extrabold py-3.5 uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-sm">Send Inquiry <i class="fa-solid fa-paper-plane text-xs" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <section class="text-center space-y-4 pt-6 border-t border-slate-300"><p class="text-sm font-black text-slate-900 uppercase tracking-widest">© 2026 State Nationalist Reform. All rights reserved.</p><p class="bg-slate-100 p-5 border border-slate-200 text-left text-[11px] leading-relaxed text-slate-600"><strong class="text-red-700">Notice:</strong> State Nationalist Reform is not a legal service provider. The information on this site is for educational purposes only and does not constitute legal advice.</p></section>
+            <p class="legend">┆ Dashed connectors restate links asserted by the source graphic. They are not evidence of causation, asset movement, or a legal outcome.</p>
+          </div>
         </div>
-    </main>
-    <div id="drawer-backdrop" class="fixed inset-0 bg-snrNavy/50 z-40 hidden" aria-hidden="true"></div>
-    <aside id="stage-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white border-l border-slate-300 shadow-2xl z-50 p-6 transform translate-x-full transition-transform duration-300 overflow-y-auto space-y-6" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true" inert><div class="flex items-center justify-between border-b border-slate-200 pb-4"><div><div class="text-[10px] font-mono font-bold text-snrRed uppercase" id="drawer-classification">Stage classification</div><h2 class="text-2xl font-black font-condensed text-snrNavy uppercase mt-0.5" id="drawer-title">Stage title</h2></div><button type="button" id="drawer-close" class="w-9 h-9 bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center font-bold" aria-label="Close stage details">✕</button></div><div class="space-y-4 text-xs font-sans"><div><div class="text-[10px] font-mono font-bold text-slate-500 uppercase mb-1">Diagram asserted claim</div><p class="p-4 bg-slate-50 border-l-4 border-slate-800 text-slate-800 leading-relaxed" id="drawer-claim"></p></div><div><div class="text-[10px] font-mono font-bold text-snrRed uppercase mb-1">What this page establishes</div><p class="p-4 bg-red-50 border-l-4 border-snrRed text-slate-800 leading-relaxed" id="drawer-established"></p></div></div><button type="button" onclick="closeDrawer()" class="w-full py-2.5 bg-snrNavy text-white font-mono text-xs font-bold uppercase hover:bg-slate-800 transition">Close Inspector</button></aside>
-    <script>
-        const STAGE_DETAILS = {
-            "fed-reserves": { classification: "Starting label", title: "Federal Reserves", claim: "The diagram names “Federal Reserves” as a source in its claimed asset flow.", established: "The Federal Reserve System is the U.S. central bank. It conducts monetary policy and supervises and regulates banks; the diagram cites no specific asset, transaction, or legal rule tying those functions to this flow." },
-            "state-courts": { classification: "Starting label", title: "State Courts", claim: "The diagram names state courts and connects them to its claimed liability path.", established: "Represents the judicial branch enforcement mechanism that holds individuals or entities legally liable under state law." },
-            "public-nexus": { classification: "Claimed connection", title: "Public Nexus (Liability)", claim: "The diagram uses “Public Nexus” for its claimed connection between public institutions and legal responsibility.", established: "Here, “public nexus” is the diagram's label for an alleged connection. No law, case, or facts are cited to establish that link or liability." },
-            "national-protocol": { classification: "Proposed method", title: "National Reform Protocol", claim: "Presented as a way to keep the government from reaching or controlling your assets.", established: "That is a stated aim, not a proven result or guarantee. This page provides no authority or transaction documents demonstrating that the method achieves it; legal effect depends on applicable law and the facts." },
-            "private-equity": { classification: "Asset step", title: "Private Equity", claim: "Shown as the asset-holding stage; actual title and control depend on documents and applicable law.", established: "The page does not identify the assets, legal owner, trustee, beneficiaries, or trust instrument needed to show an actual transfer." },
-            "protected-assets": { classification: "Intended outcome", title: "Protected Assets", claim: "This is the stated goal in the graphic, not a result it proves or guarantees.", established: "Represents the intended objective of the diagram, not a legally guaranteed or universally proven result." }
-        };
-        function switchView(tabId) {
-            document.querySelectorAll('[role="tab"]').forEach(button => {
-                const selected = button.getAttribute("aria-controls") === tabId;
-                button.setAttribute("aria-selected", String(selected)); button.tabIndex = selected ? 0 : -1; button.classList.toggle("tab-active", selected);
-            });
-            document.querySelectorAll(".tab-content").forEach(panel => { const selected = panel.id === tabId; panel.classList.toggle("hidden", !selected); panel.hidden = !selected; });
-        }
-        document.querySelectorAll('[role="tab"]').forEach((button, index, buttons) => button.addEventListener("keydown", event => {
-            if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return; event.preventDefault();
-            const next = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1 : (index + (event.key === "ArrowRight" ? 1 : buttons.length - 1)) % buttons.length;
-            buttons[next].focus(); switchView(buttons[next].getAttribute("aria-controls"));
-        }));
-        let lastStageFocus = null;
-        function inspectStage(stageKey) {
-            const info = STAGE_DETAILS[stageKey]; if (!info) return; lastStageFocus = document.activeElement;
-            document.querySelectorAll("[data-stage]").forEach(node => { const selected = node.dataset.stage === stageKey; node.classList.toggle("is-selected", selected); node.classList.toggle("stage-box-selected", selected); node.setAttribute("aria-pressed", String(selected)); });
-            document.getElementById("drawer-classification").textContent = info.classification; document.getElementById("drawer-title").textContent = info.title; document.getElementById("drawer-claim").textContent = info.claim; document.getElementById("drawer-established").textContent = info.established;
-            document.getElementById("drawer-backdrop").classList.remove("hidden"); const drawer = document.getElementById("stage-drawer"); drawer.classList.remove("translate-x-full"); drawer.setAttribute("aria-hidden", "false"); drawer.inert = false; document.body.classList.add("overflow-hidden"); document.getElementById("drawer-close").focus();
-        }
-        function closeDrawer() {
-            const drawer = document.getElementById("stage-drawer"); drawer.classList.add("translate-x-full"); drawer.setAttribute("aria-hidden", "true"); drawer.inert = true; document.getElementById("drawer-backdrop").classList.add("hidden"); document.body.classList.remove("overflow-hidden");
-            document.querySelectorAll("[data-stage]").forEach(node => { node.classList.remove("is-selected", "stage-box-selected"); node.setAttribute("aria-pressed", "false"); });
-            if (lastStageFocus && typeof lastStageFocus.focus === "function") lastStageFocus.focus();
-        }
-        document.querySelectorAll("[data-stage]").forEach(node => { node.addEventListener("click", () => inspectStage(node.dataset.stage)); if (node.tagName.toLowerCase() === "g") node.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); inspectStage(node.dataset.stage); } }); });
-        document.getElementById("drawer-close").addEventListener("click", closeDrawer); document.getElementById("drawer-backdrop").addEventListener("click", closeDrawer);
-        document.addEventListener("keydown", event => { if (event.key === "Escape" && document.getElementById("stage-drawer").getAttribute("aria-hidden") === "false") closeDrawer(); });
-        window.switchView = switchView; window.closeDrawer = closeDrawer;
-    </script>
-    <!-- Global Footer -->
-    <footer class="bg-slate-900 text-white text-[10px] p-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center font-bold uppercase tracking-widest gap-4 shrink-0">
-        <div>Proprietary Information of State Nationalist Reform • No public funds used</div>
-        <div class="text-center md:text-right">
-            Powered by <a href="https://ladmedia.co" target="_blank" class="text-red-500 hover:text-red-400 transition-colors underline decoration-2 underline-offset-4">LAD MEDIA</a>
+      </div>
+    </section>
+
+    <section class="section bg-cream" id="reading" aria-labelledby="reading-title">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">Evaluation</span><h2 id="reading-title">Whole-graphic reading</h2><p class="lead">Comparing the source graphic's claims with what this page actually establishes.</p></div>
+        <div class="claims"><div class="card"><h3>The claim represented</h3><p>The original graphic depicts a path from public institutions through a claimed liability nexus and protocol to private equity and protected assets.</p></div><div class="card"><h3>What this page establishes</h3><p>This page does not cite authority or provide transaction documents establishing that path as a legal result.</p></div><div class="card"><h3>Public-side claim</h3><p>The page describes public status as exposing property to liens, probate claims, and levies. It does not cite authority for a universal rule; actual exposure depends on applicable law and the facts.</p></div><div class="card"><h3>Trust-side claim</h3><p>The National Reform Protocol is presented as a way to keep the government from reaching or controlling your assets. That is a stated aim, not a proven result or guarantee; legal effect depends on applicable law and the facts.</p></div></div>
+        <h3>Structural analysis breakdown</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Stage</th><th>Classification</th><th>Asserted graphic claim</th><th>What is established</th></tr></thead>
+          <tbody><tr><td>Federal Reserves</td><td><span class="chip">Starting label</span></td><td>Shown as a source in the flow</td><td>The Federal Reserve System is the U.S. central bank; the diagram identifies no specific asset or legal claim.<br><a href="https://www.federalreserve.gov/aboutthefed.htm" target="_blank" rel="noopener">Federal Reserve source</a></td></tr><tr><td>State Courts</td><td><span class="chip">Starting label</span></td><td>Shown as connected to liability</td><td>Established by state constitutions and laws; court structures and types of cases vary. No supporting case is cited.<br><a href="https://www.uscourts.gov/about-federal-courts/court-role-and-structure/comparing-federal-state-courts" target="_blank" rel="noopener">U.S. Courts source</a></td></tr><tr><td>Public Nexus</td><td><span class="chip">Claimed connection</span></td><td>Claims a public-institution link to liability</td><td>The graphic cites no law, case, or facts establishing the link or liability.</td></tr><tr><td>National Reform Protocol</td><td><span class="chip">Proposed method</span></td><td>Intended to keep government from reaching or controlling assets</td><td>Stated aim, not a proven outcome or guarantee; effect depends on applicable law and facts.</td></tr><tr><td>Private Equity</td><td><span class="chip">Asset step</span></td><td>Asset-holding stage</td><td>Title depends on instruments and applicable law.</td></tr><tr><td>Protected Assets</td><td><span class="chip">Intended outcome</span></td><td>Complete asset insulation</td><td>Stated goal — not a guaranteed result.</td></tr></tbody></table></div>
+      </div>
+    </section>
+    <section class="section bg-cream contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 id="contact-title">Have a question?</h2>
+          <p class="lead">Send a question about the topics on this site. Messages go to the State Nationalist Reform inquiry inbox by email.</p>
+          <div class="notice"><strong>Notice:</strong> State Nationalist Reform is not a legal service provider and does not provide legal advice. This form is not a secure channel — do not include sensitive legal, financial, or identity details.</div>
         </div>
-    </footer>
-    <script type="module" src="site.js"></script>
+        <form class="form-card" action="https://formsubmit.co/SNR_2026@proton.me" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry — State Nationalist Reform">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="req">Required fields are marked with an asterisk (*).</p>
+          <div class="form-row">
+            <label>Full name *<input type="text" name="name" required autocomplete="name"></label>
+            <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+          </div>
+          <label>Topic<select name="inquiry_type"><option value="98-Series Protocol">98-Series Protocol Inquiry</option><option value="Jurisdictional Standing">Jurisdictional Standing</option><option value="Private Equity Path">Private Equity Asset Path</option><option value="General Strategic Question">General Question</option></select></label>
+          <label>Your question *<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Send question</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <h4>State Nationalist Reform</h4>
+        <p>Public educational information about trusts, trust funding and administration, and the organization's mission.</p>
+      </div>
+      <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="mission.html">Mission</a></li><li><a href="funding-trust.html">Funding &amp; Trust</a></li><li><a href="standing.html">Standing</a></li><li><a href="vault.html">Resources</a></li></ul></div>
+      <div>
+        <h4>Notice</h4>
+        <p>State Nationalist Reform is not a legal service provider. The information on this site is for educational purposes only and does not constitute legal advice. Consult a qualified attorney about your circumstances.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="wrap">
+      <span>© 2026 State Nationalist Reform · No public funds used</span>
+      <span>Powered by <a href="https://ladmedia.co" target="_blank" rel="noopener">LAD MEDIA</a></span>
+    </div></div>
+  </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

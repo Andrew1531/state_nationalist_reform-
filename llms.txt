@@ -8,7 +8,7 @@
 - [Mission](https://statenationalistreform.com/mission.html): The organization's stated trust stewardship mission, principles, and initiatives.
 - [Funding and Trust](https://statenationalistreform.com/funding-trust.html): Trust funding information and an asset-distribution illustration; educational content, not legal or tax advice.
 - [Standing](https://statenationalistreform.com/standing.html): An interactive explanation of the site's asset-flow diagram, including the Federal Reserve System, state courts, the claimed “Public Nexus,” and the National Reform Protocol's stated objective. The diagram's relationships are claims, not established legal outcomes.
-- [Vault](https://statenationalistreform.com/vault.html): Descriptions of trust-administration resources.
+- [Resources](https://statenationalistreform.com/vault.html): Descriptions of trust-administration resources.
 
 ## Important context
 

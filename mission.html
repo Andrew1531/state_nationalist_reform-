@@ -30,100 +30,106 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://statenationalistreform.com/#organization","name":"State Nationalist Reform","url":"https://statenationalistreform.com/"},{"@type":"WebSite","@id":"https://statenationalistreform.com/#website","name":"State Nationalist Reform","url":"https://statenationalistreform.com/","publisher":{"@id":"https://statenationalistreform.com/#organization"}},{"@type":"WebPage","@id":"https://statenationalistreform.com/mission.html#webpage","url":"https://statenationalistreform.com/mission.html","name":"Trust Stewardship Mission | State Nationalist Reform","description":"Learn about State Nationalist Reform's trust stewardship mission, guiding principles, and educational materials about trusts. This is not legal advice.","isPartOf":{"@id":"https://statenationalistreform.com/#website"}}]}
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;600;700;800&amp;display=swap">
     <link rel="stylesheet" href="site.css">
-</head>
-<body class="overflow-hidden h-screen flex flex-col">
-    <div class="bg-red-700 text-white text-[10px] font-bold tracking-[0.4em] py-2 text-center uppercase shrink-0">Restoring the Republic • Private National Interest • Authorized Personnel Only</div>
-    <nav class="bg-slate-900 text-white px-4 md:px-6 py-4 flex justify-between items-center shadow-2xl z-50 shrink-0 gap-4" aria-label="Main navigation">
-        <div class="flex items-center gap-3 md:gap-4 shrink-0">
-            <a href="index.html" aria-label="State Nationalist Reform home" class="bg-red-700 p-2 font-black text-xl italic tracking-tighter">SNR</a>
-            <a href="index.html" class="hidden md:block text-white no-underline">
-                <span class="text-xl leading-none block">State Nationalist Reform</span>
-                <span class="text-[9px] uppercase tracking-widest text-red-500 font-bold">Strategic Operations</span>
-            </a>
+</head><body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="utility">★ Restoring the Republic · Educational information only ★</div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="State Nationalist Reform home"><span class="brand-mark">SNR</span><span class="brand-name">State Nationalist Reform</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="mission.html" aria-current="page">Mission</a>
+          <a href="funding-trust.html">Funding &amp; Trust</a>
+          <a href="standing.html">Standing</a>
+          <a href="vault.html">Resources</a>
+          <a class="btn btn-sm" href="#contact">Get involved</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <div class="crumbs"><a href="index.html">Home</a> / Mission</div>
+        <h1>Trust Stewardship <span style="color:var(--red)">Mission</span></h1>
+        <p class="lead">Strategic initiative overview: what the organization sets out to do and the principles behind it.</p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="overview-title">
+      <div class="wrap split">
+        <div class="prose">
+          <span class="eyebrow">Strategic initiative overview</span>
+          <h2 id="overview-title">A structural intervention</h2>
+          <p>Nationalist Reform is not just a movement; it is a structural intervention. We operate at the intersection of Constitutional Law and Private Equity, with the aim of separating individual wealth from state-managed liability.</p>
+          <p>The <strong>Trust Protocol</strong> is designed to help members operate in a private capacity while maintaining equitable control of their estates.</p>
         </div>
-        <div class="flex gap-1 md:gap-2 overflow-x-auto no-scrollbar">
-                <a id="nav-home" href="index.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Home</a>
-                <a id="nav-mission" href="mission.html" class="nav-item active-nav px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500" aria-current="page">Mission</a>
-                <a id="nav-funding" href="funding-trust.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Funding/Trust</a>
-                <a id="nav-standing" href="standing.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Standing</a>
-                <a id="nav-vault" href="vault.html" class="nav-item px-3 md:px-4 py-2 text-xs font-bold uppercase tracking-tighter transition-all whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">Vault</a>
-        </div>
-        <button type="button" class="hidden lg:flex items-center gap-3 border-l border-slate-700 pl-6" onclick="scrollToContact()">
-            <span class="w-3 h-3 bg-red-600 rounded-full live-indicator" aria-hidden="true"></span>
-            <span class="text-[10px] font-black uppercase tracking-widest">Live: Ops Room</span>
-        </button>
-    </nav>
-    <main class="flex-1 overflow-y-auto bg-slate-50" id="main-content">
-<section id="mission" class="fade-in">
-            <div class="max-w-7xl mx-auto p-8 md:p-12">
-                <h1 class="text-4xl font-black uppercase mb-8">Trust Stewardship Mission</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                    <div class="md:col-span-2">
-                        <h2 class="text-2xl font-bold mb-4 border-l-4 border-red-700 pl-4 uppercase">Strategic Initiative Overview</h2>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            Nationalist Reform is not just a movement; it is a structural intervention. We operate at the intersection of <strong>Constitutional Law</strong> and <strong>Private Equity</strong> to decouple individual wealth from state-managed liability. 
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            By deploying the <strong>Trust Protocol</strong>, we enable patriots to operate in a private capacity, shielded from the administrative state’s overreach while maintaining full equitable control of their estates.
-                        </p>
-                    </div>
-                    <div class="bg-white p-6 shadow-xl border border-slate-200">
-                        <h4 class="font-black text-sm uppercase mb-4 text-slate-400">Tactical Targets</h4>
-                        <ul class="space-y-3 font-bold text-xs uppercase">
-                            <li class="flex justify-between border-b pb-2"><span>Estate Tax</span> <span class="text-red-600">Eliminated</span></li>
-                            <li class="flex justify-between border-b pb-2"><span>Public Nexus</span> <span class="text-red-600">Severed</span></li>
-                            <li class="flex justify-between border-b pb-2"><span>Jurisdiction</span> <span class="text-red-600">Private</span></li>
-                            <li class="flex justify-between"><span>Title</span> <span class="text-red-600">Equitable</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        
-</section>
-<section id="contact-form-section" class="bg-slate-900 text-white p-8 md:p-12 border-t-8 border-red-700">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-4xl font-black uppercase mb-4 tracking-tighter">Submit <span class="text-red-700">Inquiry</span></h3>
-                    <p class="text-slate-400 text-sm mb-8 uppercase tracking-widest leading-relaxed">
-                        Secure communication channel for high-level strategic questions. Your information is held in private jurisdiction.
-                    </p>
-                </div>
-                <form action="https://formsubmit.co/SNR_2026@proton.me" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="New Strategic Operational Enquiry">
-                    <input type="hidden" name="_captcha" value="false">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" name="name" placeholder="FULL NAME (OR FICTION)" required class="w-full bg-slate-800 border border-slate-700 p-4 text-xs font-mono uppercase focus:outline-none focus:border-red-700 text-white">
-                        <input type="email" name="email" placeholder="SECURE EMAIL" required class="w-full bg-slate-800 border border-slate-700 p-4 text-xs font-mono uppercase focus:outline-none focus:border-red-700 text-white">
-                    </div>
-                    <textarea name="message" placeholder="DETAILED STRATEGIC ENQUIRY OR QUESTIONS" rows="4" required class="w-full bg-slate-800 border border-slate-700 p-4 text-xs font-mono uppercase focus:outline-none focus:border-red-700 text-white"></textarea>
-                    <button type="submit" class="w-full bg-red-700 hover:bg-red-800 py-4 font-black uppercase tracking-widest transition-all">Transmit</button>
-                </form>
-            </div>
-        </section>
+        <aside class="pull"><p>“Operating at the intersection of Constitutional Law and Private Equity.”</p></aside>
+      </div>
+    </section>
 
-        <!-- LEGAL NOTICE SECTION -->
-        <section class="max-w-7xl mx-auto p-8 md:p-12">
-            <div class="text-center space-y-6">
-                <p class="text-sm font-black text-slate-900 uppercase tracking-widest">
-                    © 2026 State Nationalist Reform. All rights reserved.
-                </p>
-                <div class="bg-slate-100 p-6 border border-slate-200 text-left">
-                    <p class="text-[11px] leading-relaxed text-slate-500 uppercase font-medium">
-                        <span class="text-red-700 font-black">Notice:</span> State Nationalist Reform is not a legal service provider. The information and content on this platform are for educational purposes only and do not constitute legal advice.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Global Footer -->
-    <footer class="bg-slate-900 text-white text-[10px] p-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center font-bold uppercase tracking-widest gap-4 shrink-0">
-        <div>Proprietary Information of State Nationalist Reform • No public funds used</div>
-        <div class="text-center md:text-right">
-            Powered by <a href="https://ladmedia.co" target="_blank" class="text-red-500 hover:text-red-400 transition-colors underline decoration-2 underline-offset-4">LAD MEDIA</a>
+    <section class="section bg-cream" aria-labelledby="goals-title">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">Principles</span><h2 id="goals-title">Stated goals</h2>
+          <p class="lead">The four goals the initiative works toward. These describe intended aims, not guaranteed legal or tax outcomes.</p></div>
+        <div class="grid g4">
+          <div class="card"><div class="card-icon" aria-hidden="true">1</div><h3>Estate planning</h3><p>Planning for how an estate is held and passed on, including its tax treatment.</p></div>
+          <div class="card"><div class="card-icon" aria-hidden="true">2</div><h3>Public nexus</h3><p>Examining the claimed connection between public institutions and personal liability.</p></div>
+          <div class="card"><div class="card-icon" aria-hidden="true">3</div><h3>Private jurisdiction</h3><p>Operating in a private capacity wherever applicable law allows.</p></div>
+          <div class="card"><div class="card-icon" aria-hidden="true">4</div><h3>Equitable title</h3><p>Maintaining equitable control of estate assets through trust structures.</p></div>
         </div>
-    </footer>
-    <script type="module" src="site.js"></script>
+        <p class="small-note">Results depend on applicable law and the facts of each situation. Consult a qualified attorney.</p>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="next-banner"><div><span class="eyebrow">Next</span><h3>See how the standing diagram is explained</h3></div><a class="btn" href="standing.html">Go to Standing</a></div>
+      </div>
+    </section>
+    <section class="section bg-cream contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 id="contact-title">Have a question?</h2>
+          <p class="lead">Send a question about the topics on this site. Messages go to the State Nationalist Reform inquiry inbox by email.</p>
+          <div class="notice"><strong>Notice:</strong> State Nationalist Reform is not a legal service provider and does not provide legal advice. This form is not a secure channel — do not include sensitive legal, financial, or identity details.</div>
+        </div>
+        <form class="form-card" action="https://formsubmit.co/SNR_2026@proton.me" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry — State Nationalist Reform">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="req">Required fields are marked with an asterisk (*).</p>
+          <div class="form-row">
+            <label>Full name *<input type="text" name="name" required autocomplete="name"></label>
+            <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+          </div>
+          
+          <label>Your question *<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Send question</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <h4>State Nationalist Reform</h4>
+        <p>Public educational information about trusts, trust funding and administration, and the organization's mission.</p>
+      </div>
+      <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="mission.html">Mission</a></li><li><a href="funding-trust.html">Funding &amp; Trust</a></li><li><a href="standing.html">Standing</a></li><li><a href="vault.html">Resources</a></li></ul></div>
+      <div>
+        <h4>Notice</h4>
+        <p>State Nationalist Reform is not a legal service provider. The information on this site is for educational purposes only and does not constitute legal advice. Consult a qualified attorney about your circumstances.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="wrap">
+      <span>© 2026 State Nationalist Reform · No public funds used</span>
+      <span>Powered by <a href="https://ladmedia.co" target="_blank" rel="noopener">LAD MEDIA</a></span>
+    </div></div>
+  </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

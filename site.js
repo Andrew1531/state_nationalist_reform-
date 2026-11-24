@@ -1,59 +1,84 @@
-function scrollToContact(){const element=document.getElementById("contact-form-section");if(element)element.scrollIntoView({behavior:"smooth"});}
+// State Nationalist Reform — site script
 
-let fundingChartInstance=null;
-function initCharts(){const chartEl=document.getElementById("fundingChart");if(!chartEl||!window.Chart)return;if(fundingChartInstance)fundingChartInstance.destroy();fundingChartInstance=new window.Chart(chartEl.getContext("2d"),{type:"bar",data:{labels:["Liquidity","Real Estate","Equities","Privacy"],datasets:[{label:"Public Status (Exposed)",data:[65,80,55,10],backgroundColor:"#1E293B"},{label:"SNR Trust (Insulated)",data:[95,100,90,100],backgroundColor:"#B91C1C"}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:"y",plugins:{legend:{position:"bottom",labels:{font:{weight:"bold",size:10}}}},scales:{x:{beginAtZero:true,max:100}}}});}
-
-function renderStandingFlow(){
-    const target=document.getElementById("standingSankey");
-    const detail=document.getElementById("standingNodeDetail");
-    if(!target||!detail)return;
-    const sources=[
-        {id:"reserves",title:"FEDERAL RESERVES",kind:"Starting label",summary:"Named in the original graphic; no specific asset, transaction, or rule is identified.",claim:"The source graphic places “Federal Reserves” among the starting labels and links it to Public Nexus (Liability).",evidence:"This page supplies no specific asset, transaction, or legal rule that explains that connection."},
-        {id:"courts",title:"STATE COURTS",kind:"Starting label",summary:"Shown as connected to liability; no case, jurisdiction, or rule is supplied.",claim:"The source graphic places “State Courts” among the starting labels and links it to Public Nexus (Liability).",evidence:"This page does not identify a case, jurisdiction, judgment, or legal rule establishing the depicted link."}
-    ];
-    const stages=[
-        {id:"nexus",title:"PUBLIC NEXUS (LIABILITY)",kind:"Claimed connection",summary:"A bridge between the source labels and liability is asserted, but not defined or sourced here.",linkLabel:"The original graphic asserts a connection",claim:"The diagram treats “Public Nexus (Liability)” as the connection between the starting labels and the rest of its proposed flow.",evidence:"This page does not define “public nexus” or cite authority showing that this label creates a legal liability."},
-        {id:"protocol",title:"NATIONAL REFORM PROTOCOL",kind:"Proposed method",summary:"Presented as the step that changes the claimed relationship; its legal effect is not demonstrated here.",linkLabel:"The page presents a proposed response",claim:"The diagram places the National Reform Protocol after the claimed liability nexus, implying that it changes that relationship.",evidence:"This page does not provide a statute, court ruling, filing, or other authority establishing that effect."},
-        {id:"equity",title:"PRIVATE EQUITY",kind:"Asset step",summary:"Shown as the asset-holding stage; actual title and control depend on documents and applicable law.",linkLabel:"The graphic depicts an asset path",claim:"The diagram depicts private equity as the next stage after the protocol.",evidence:"This page does not identify the assets, legal owner, trustee, beneficiaries, or trust instrument needed to show an actual transfer."},
-        {id:"assets",title:"PROTECTED ASSETS",kind:"Intended outcome",summary:"This is the stated goal in the graphic, not a result it proves or guarantees.",linkLabel:"The stated goal—not a guaranteed result",claim:"The final label presents “Protected Assets” as the intended outcome of the illustrated path.",evidence:"The diagram does not establish that a trust or private-capacity label places assets beyond courts or creditors."}
-    ];
-    const allNodes=[...sources,...stages];
-    const nodeMarkup=node=>`<button type="button" class="flow-node" data-node="${node.id}" aria-pressed="false" aria-label="${node.title}. ${node.summary}"><span class="flow-node-kind">${node.kind}</span><span class="flow-node-title">${node.title}</span><span class="flow-node-summary">${node.summary}</span></button>`;
-    const stageMarkup=stages.map(stage=>`<div class="flow-stage"><div class="flow-link" aria-hidden="true"><span>${stage.linkLabel}</span></div>${nodeMarkup(stage)}</div>`).join("");
-    target.innerHTML=`<div class="standing-flow">
-        <div class="flow-source-group">
-            <p class="flow-group-title">Starting labels in the original graphic</p>
-            <div class="flow-source-grid">${sources.map(nodeMarkup).join("")}</div>
-        </div>
-        ${stageMarkup}
-    </div>`;
-    const resetDetails=()=>{
-        detail.classList.remove("has-selection");
-        detail.querySelector(".standing-detail-label").textContent="Whole-graphic reading";
-        detail.querySelector('[data-detail="claim"]').textContent="The original graphic depicts a path from public institutions through a claimed liability nexus and protocol to private equity and protected assets.";
-        detail.querySelector('[data-detail="evidence"]').textContent="This page does not cite authority or provide transaction documents establishing that path as a legal result.";
-    };
-    target.addEventListener("click",event=>{
-        const button=event.target.closest(".flow-node");
-        if(!button)return;
-        const selected=button.getAttribute("aria-pressed")==="true";
-        target.querySelectorAll(".flow-node").forEach(node=>{
-            node.setAttribute("aria-pressed","false");
-            node.classList.remove("is-selected");
-        });
-        if(selected){resetDetails();return;}
-        const node=allNodes.find(item=>item.id===button.dataset.node);
-        if(!node)return;
-        button.setAttribute("aria-pressed","true");
-        button.classList.add("is-selected");
-        detail.classList.add("has-selection");
-        detail.querySelector(".standing-detail-label").textContent=node.title;
-        detail.querySelector('[data-detail="claim"]').textContent=node.claim;
-        detail.querySelector('[data-detail="evidence"]').textContent=node.evidence;
-    });
+// Mobile navigation
+function initNav(){
+  const toggle=document.querySelector(".nav-toggle");
+  const nav=document.getElementById("main-nav");
+  if(!toggle||!nav)return;
+  toggle.addEventListener("click",()=>{
+    const open=nav.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded",String(open));
+    toggle.textContent=open?"Close":"Menu";
+  });
 }
 
-window.scrollToContact=scrollToContact;
+// Funding chart (illustration)
+function initChart(){
+  const el=document.getElementById("fundingChart");
+  if(!el||!window.Chart)return;
+  new window.Chart(el.getContext("2d"),{
+    type:"bar",
+    data:{
+      labels:["Liquidity","Real Estate","Equities","Privacy"],
+      datasets:[
+        {label:"Public status (illustrative)",data:[65,80,55,10],backgroundColor:"#0b2148",borderRadius:3},
+        {label:"Private trust — stated goal (illustrative)",data:[95,100,90,100],backgroundColor:"#c8102e",borderRadius:3}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,indexAxis:"y",
+      plugins:{legend:{position:"bottom",labels:{font:{family:"Inter",weight:"bold",size:11},color:"#1c2433"}}},
+      scales:{x:{beginAtZero:true,max:100,grid:{color:"#e6e9ef"}},y:{grid:{display:false},ticks:{font:{family:"Inter",weight:"bold"}}}}
+    }
+  });
+}
 
-function initPageVisuals(){if(document.getElementById("fundingChart"))initCharts();if(document.getElementById("standingSankey"))renderStandingFlow();}
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initPageVisuals,{once:true});else initPageVisuals();
+// Standing: stepper + inspector
+const STAGES=[
+  {id:"reserves",title:"Federal Reserves",kind:"Starting label",
+   claim:"The source graphic places “Federal Reserves” among the starting labels and links it to Public Nexus (Liability).",
+   evidence:"The Federal Reserve System is the U.S. central bank. This page supplies no specific asset, transaction, or legal rule that explains the depicted connection."},
+  {id:"courts",title:"State Courts",kind:"Starting label",
+   claim:"The source graphic places “State Courts” among the starting labels and links it to Public Nexus (Liability).",
+   evidence:"State courts are established by each state's constitution and laws. This page does not identify a case, jurisdiction, judgment, or legal rule establishing the depicted link."},
+  {id:"nexus",title:"Public Nexus (Liability)",kind:"Claimed connection",
+   claim:"The diagram treats “Public Nexus (Liability)” as the connection between the starting labels and the rest of its proposed flow.",
+   evidence:"This page does not define “public nexus” or cite authority showing that this label creates a legal liability."},
+  {id:"protocol",title:"National Reform Protocol",kind:"Proposed method",
+   claim:"The diagram places the National Reform Protocol after the claimed liability nexus, presenting it as a way to keep the government from reaching or controlling assets.",
+   evidence:"This is a stated aim, not a proven result. The page provides no statute, court ruling, or filing establishing that effect; legal effect depends on applicable law and the facts."},
+  {id:"equity",title:"Private Equity",kind:"Asset step",
+   claim:"The diagram depicts private equity as the asset-holding stage after the protocol.",
+   evidence:"This page does not identify the assets, legal owner, trustee, beneficiaries, or trust instrument needed to show an actual transfer. Title depends on documents and applicable law."},
+  {id:"assets",title:"Protected Assets",kind:"Intended outcome",
+   claim:"The final label presents “Protected Assets” as the intended outcome of the illustrated path.",
+   evidence:"This is the stated goal, not a guaranteed result. The diagram does not establish that a trust or private-capacity label places assets beyond courts or creditors."}
+];
+
+function initStanding(){
+  const list=document.getElementById("flowList");
+  const panel=document.getElementById("inspector");
+  if(!list||!panel)return;
+  list.innerHTML=STAGES.map((s,i)=>`<li><button type="button" class="flow-step" data-i="${i}" aria-pressed="false" aria-controls="inspector">
+    <span class="flow-num">${i+1}</span><span><span class="flow-kind">${s.kind}</span><span class="flow-title">${s.title}</span></span><span class="flow-arrow" aria-hidden="true">›</span></button></li>`).join("");
+  const $=sel=>panel.querySelector(sel);
+  const buttons=[...list.querySelectorAll(".flow-step")];
+  let current=0;
+  function show(i){
+    current=(i+STAGES.length)%STAGES.length;
+    const s=STAGES[current];
+    buttons.forEach((b,j)=>b.setAttribute("aria-pressed",String(j===current)));
+    $("[data-kind]").textContent=s.kind;
+    $("[data-title]").textContent=s.title;
+    $("[data-claim]").textContent=s.claim;
+    $("[data-evidence]").textContent=s.evidence;
+    $("[data-pos]").textContent=`Stage ${current+1} of ${STAGES.length}`;
+  }
+  list.addEventListener("click",e=>{const b=e.target.closest(".flow-step");if(b)show(+b.dataset.i);});
+  $("[data-prev]").addEventListener("click",()=>show(current-1));
+  $("[data-next]").addEventListener("click",()=>show(current+1));
+  show(0);
+}
+
+function init(){initNav();initChart();initStanding();}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
