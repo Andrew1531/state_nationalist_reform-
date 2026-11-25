@@ -44,6 +44,12 @@ const STAGES=[
   "src": [
    "Federal Reserve: What is the purpose of the Federal Reserve System?",
    "https://www.federalreserve.gov/faqs/about_12594.htm"
+  ],
+  "usc": [
+   [
+    "12 U.S.C. § 225a — Federal Reserve monetary policy objectives",
+    "https://www.law.cornell.edu/uscode/text/12/225a"
+   ]
   ]
  },
  {
@@ -55,6 +61,16 @@ const STAGES=[
   "src": [
    "U.S. Courts: Comparing Federal & State Courts",
    "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/comparing-federal-state-courts"
+  ],
+  "usc": [
+   [
+    "18 U.S.C. § 3231 — federal district court jurisdiction; state court jurisdiction preserved",
+    "https://www.law.cornell.edu/uscode/text/18/3231"
+   ],
+   [
+    "28 U.S.C. § 1331 — federal question jurisdiction",
+    "https://www.law.cornell.edu/uscode/text/28/1331"
+   ]
   ]
  },
  {
@@ -66,6 +82,16 @@ const STAGES=[
   "src": [
    "United States v. Benabe (7th Cir. 2011), as cited by the Third Circuit",
    "https://www2.ca3.uscourts.gov/opinarch/163906np.pdf"
+  ],
+  "usc": [
+   [
+    "26 U.S.C. § 7701(a)(1) — “person” includes an individual and a trust",
+    "https://www.law.cornell.edu/uscode/text/26/7701"
+   ],
+   [
+    "26 U.S.C. § 6702 — penalty for frivolous tax submissions",
+    "https://www.law.cornell.edu/uscode/text/26/6702"
+   ]
   ]
  },
  {
@@ -77,6 +103,12 @@ const STAGES=[
   "src": [
    "IRS: Abusive trust tax evasion schemes — talking points",
    "https://www.irs.gov/businesses/small-businesses-self-employed/abusive-trust-tax-evasion-schemes-talking-points"
+  ],
+  "usc": [
+   [
+    "26 U.S.C. §§ 671–679 — grantor trust rules",
+    "https://www.law.cornell.edu/uscode/text/26/671"
+   ]
   ]
  },
  {
@@ -88,6 +120,16 @@ const STAGES=[
   "src": [
    "IRS: Foreign trust reporting requirements and tax consequences",
    "https://www.irs.gov/node/6112"
+  ],
+  "usc": [
+   [
+    "26 U.S.C. § 679 — foreign trusts with U.S. beneficiaries",
+    "https://www.law.cornell.edu/uscode/text/26/679"
+   ],
+   [
+    "26 U.S.C. § 6048 — foreign trust reporting",
+    "https://www.law.cornell.edu/uscode/text/26/6048"
+   ]
   ]
  },
  {
@@ -99,6 +141,12 @@ const STAGES=[
   "src": [
    "Uniform Trust Code § 505 as enacted (Maine)",
    "https://legislature.maine.gov/statutes/18-B/title18-Bsec505.html"
+  ],
+  "usc": [
+   [
+    "26 U.S.C. § 2038 — revocable transfers included in the gross estate",
+    "https://www.law.cornell.edu/uscode/text/26/2038"
+   ]
   ]
  }
 ];
@@ -121,6 +169,7 @@ function initStanding(){
     $("[data-claim]").textContent=s.claim;
     $("[data-evidence]").textContent=s.law;
     const a=$("[data-src]");a.textContent=s.src[0];a.href=s.src[1];
+    $("[data-usc]").innerHTML=s.usc.map(u=>`<li><a href="${u[1]}" target="_blank" rel="noopener">${u[0]}</a></li>`).join("");
     $("[data-pos]").textContent=`Stage ${current+1} of ${STAGES.length}`;
   }
   list.addEventListener("click",e=>{const b=e.target.closest(".flow-step");if(b)show(+b.dataset.i);});

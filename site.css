@@ -223,3 +223,9 @@ td a{color:var(--red);font-weight:700}
 .h3{font-size:1.45rem}
 .footer-title{font:400 1.1rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;margin:0 0 14px}
 .inspector-col .src{font-size:.8rem;margin:.6rem 0 0;color:var(--muted)}.inspector-col .src a{color:var(--red);font-weight:700}
+.usc-box{margin-top:16px;border:1.5px solid var(--line);border-left:5px solid var(--navy);border-radius:3px;padding:14px 18px;background:#fff}
+.usc-box .eyebrow{font-size:.64rem;margin-bottom:.5rem}
+.usc-list{margin:0;padding-left:1.1rem;font-size:.86rem}
+.usc-list li{margin:.25rem 0}
+.usc-list a{color:var(--navy);font-weight:700}
+#usc td:first-child a{color:var(--red);white-space:nowrap}
